@@ -25,7 +25,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
    </head> 
 <body>
 
-<header class="header-absolute" style="height:100%">
+<header class="header-absolute">
 
       <!-- Top NavBar -->
 
@@ -43,7 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       </div>
 
       <!-- Nav bar -->
-      <nav class="navbar navbar-expand-lg navbar-light navbar-airy fixed-top py-lg-4 px-lg-5 text-uppercase"  id="mainNav" data-toggle="affix">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-airy fixed-top py-lg-4 px-lg-5 text-uppercase mb-5"  id="mainNav" data-toggle="affix">
         <div class="container-fluid" id="main-navbar">
           <a class="navbar-brand" href="#page-top">SHOP.</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="<?php echo base_url(); ?>">Home</a>
               </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Women</a>
@@ -87,7 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="<?php echo base_url().'homepage/contact'; ?>">Contact</a>
               </li>
             </ul>
             <div class="d-flex align-items-center justify-content-between justify-content-lg-end mt-1 mb-2 my-lg-0">
@@ -105,7 +105,5 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </div>
         </div>
       </nav>
-
-
   </header>
  

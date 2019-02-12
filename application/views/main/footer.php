@@ -69,9 +69,10 @@
 		              <ul class="list-unstyled">
 		                <li> <a href="#" class="text-muted">Login</a></li>
 		                <li> <a href="#" class="text-muted">Register</a></li>
-		                <li> <a href="#" class="text-muted">Wishlist</a></li>
-		                <li> <a href="#" class="text-muted">Our Products</a></li>
-		                <li> <a href="#" class="text-muted">Checkouts</a></li>
+		                <li> <a href="#" class="text-muted">Privacy Policy</a></li>
+										<li> <a href="#" class="text-muted">Refund Policy</a></li>
+										<li> <a href="#" class="text-muted">Terms & Conditions</a></li>
+										
 		              </ul>
             	</div>
             	<div class="col-lg-4 my-5">

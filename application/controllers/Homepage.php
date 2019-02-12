@@ -3,12 +3,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Homepage extends CI_Controller {
 
+	function __construct()
+	{
+		parent::__construct();
+	}
+
 	public function index()
 	{
-		$this->load->view('homepage/header');
-		$this->load->view('homepage/homepage');
-		$this->load->view('homepage/footer');
+		$this->load->view('main/header');
+		$this->load->view('main/homepage');
+		$this->load->view('main/footer');
+	}
+
+	public function contact()
+	{
+		$this->load->view('main/header');
+		$this->load->view('main/contact');
+		$this->load->view('main/footer');
 	}
 }
 
-?>
+	
