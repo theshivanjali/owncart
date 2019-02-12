@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Ecommerce</title>
 
    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="<?php echo base_url().'assets/css/bootstrap.min.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/bootstrap.min.css'; ?>">
 
     <!-- Custom Fonts for this CSS -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
     <!-- Custom Stylesheet For this template -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/creative.css';?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/creative.css'; ?>">
    </head> 
 <body>
 
@@ -43,22 +43,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
 
       <!-- Nav bar -->
-      <nav class="navbar navbar-expand-lg navbar-light navbar-airy fixed-top py-md-4 px-md-5"  id="mainNav" data-toggle="affix">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-airy fixed-top py-lg-4 px-lg-5 text-uppercase"  id="mainNav" data-toggle="affix">
         <div class="container-fluid" id="main-navbar">
           <a class="navbar-brand" href="#page-top">SHOP.</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse text-uppercase" id="navbarResponsive">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
               </li>
-              <li class="nav-item">
+                <li class="nav-item">
                 <a class="nav-link" href="#">Women</a>
-              </li>
+                 <div class="sub-menu">
+                    <ul class="list-unstyled list-inline">
+                    <li><a href="#">Ethnic Wear</a></li>
+                    <li><a href="#">Western Wear</a></li>
+                    <li><a href="#">Formal Wear</a></li>
+                    <li><a href="#">Winter Wear</a></li>
+                    </ul>  
+                  </div>
+                  <!-- <div class="dropdown">
+                  <a id="womenDropdown" href="#" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Women</a>
+                <ul aria-labelledby="womenDropdown" class="dropdown-menu">
+                <li class="dropdown-item">Ethnic Wear</li>
+                <li class="dropdown-item">Western Dress</li>
+                <li class="dropdown-item">Formal Dresses</li>
+                </ul>
+              </div> -->
+                </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Men</a>
+                <div class="sub-menu">
+                    <ul class="list-unstyled list-inline">
+                    <li><a href="#">Ethnic Wear</a></li>
+                    <li><a href="#">Formal Wear</a></li>
+                    <li><a href="#">Winter Wear</a></li>
+                    </ul>  
+                  </div>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -85,4 +108,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
   </header>
-  <!-- test now -->
+ 

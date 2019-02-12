@@ -16,12 +16,12 @@ a{
 }
 
 a:hover{
-	color: rgb(0,0,0);
+	color: rgb(180, 43, 150);
 }
 
 .btn {
 	border-radius: 0;
-	color: rgb(0,0,0);
+	color: rgb(0,0,0); 
 }
 
 .btn:hover{
@@ -63,6 +63,90 @@ header {
   top: 45px;
 }
 
+.sub-menu{
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    position: absolute;
+    background: #f8f9fa;
+    margin-top: 5px;
+    padding: 12px;
+    z-index: 9999;  
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    text-align: center;
+}
+
+.sub-menu ul li{
+    display: inline-block;
+    border-right: 1px solid darkslategray;
+    padding: 0 12px;
+  }
+
+  @media only screen and (max-width: 993px) {
+
+    .navbar{
+        background: #fff;
+    }
+
+    .sub-menu{
+        position: relative;
+        border-radius: .2rem;
+        border: 1px solid whitesmoke;
+        margin-top: 0;
+        background: #fff;
+        font-size: initial;
+    }
+   
+    .sub-menu ul{
+        position: relative;
+        display: block;
+        text-align: left;
+        padding-left: 0;
+        border: none;
+        position: static;
+        min-width: 10rem;
+        padding: .5rem 0;
+        margin: .125rem 0 0;
+        background-clip: padding-box;
+        z-index: 1000;
+        background: white;
+    }
+
+    .sub-menu ul li{
+        display: block;
+        width: 100%;
+        padding: .25rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+    }
+  }
+  
+  .sub-menu ul li:first-of-type{
+      padding-left: 0;
+  }
+
+  .sub-menu ul li:last-of-type{
+      border: none;
+  }
+
+  .sub-menu ul li a:hover{
+      text-decoration: none;
+
+  }
+
+.navbar-nav li:hover>.sub-menu {
+    display: block;
+  }
+  
 .affix {
   padding-top: 0.3em !important;
   padding-bottom: 0.3em !important;
@@ -82,7 +166,8 @@ header {
 .navbar:hover {
 	transition: all .2s ease-out;
 	background: #fff !important;
-	padding: 0px;
+    /* padding: 0px; */
+    color: rgb(180, 43, 150);
    }
 
 .navbar-brand{

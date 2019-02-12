@@ -8,7 +8,7 @@ $(document).ready(function() {
     if (scrollElement.scrollTop() >= top+45){
         wrapper.height(height);
         affixElement.addClass("affix");
-    }
+      }
     else {
         affixElement.removeClass("affix");
         wrapper.height('auto');
@@ -30,4 +30,11 @@ $(document).ready(function() {
     toggleAffix(ele, $(window), wrapper);
   });
   
+  $('ul.nav li.dropdown').hover(function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
 });
+
+
