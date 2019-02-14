@@ -37,6 +37,19 @@ $(document).ready(function() {
   });
 });
 
+$("#registerButton").click(function(){
+
+  $('#register').removeClass('d-none');
+  $('#login').addClass('d-none');
+
+});
+
+$("#loginButton").click(function(){
+
+  $('#login').removeClass('d-none');
+  $('#register').addClass('d-none');
+
+});
 
 
 // Note: This example requires that you consent to location sharing when

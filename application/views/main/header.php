@@ -92,13 +92,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </ul>
             <div class="d-flex align-items-center justify-content-between justify-content-lg-end mt-1 mb-2 my-lg-0">
               <!-- Search Button-->
-                <div data-toggle="search" class="nav-item">
+                <div class="nav-item">
                   <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                  <!-- <form><input type="search" class="form-control" name="search" placeholder="search" aria-label="Search"> </form> -->
                 </div>
-                <div data-toggle="search" class="nav-item">
+                <div data-toggle="modal" data-target="#logModal" class="nav-item">
                   <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
                 </div>
-                <div data-toggle="search" class="nav-item">
+                <div class="nav-item">
                   <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
                 </div>
             </div>
@@ -106,4 +107,113 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
       </nav>
   </header>
- 
+
+<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content" id="login">
+      <!--Header-->
+      <div class="modal-header text-center border-0">
+        <h3 class="modal-title w-100 font-weight-bold my-3" id="myModalLabel"><strong>Login</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <div class="mb-3">
+        <form>
+        <label data-error="wrong" data-success="right" for="Form-email1">Email&nbsp;/&nbsp;Mobile No.</label>
+          <input type="email" id="login_email" class="form-control">
+        </div>
+
+        <div class="pb-3">
+        <label data-error="wrong" data-success="right" for="Form-pass1">Password</label>
+          <input type="password" id="login_password" class="form-control">
+        </div>
+          <div class="font-small blue-text d-flex justify-content-between flex-row ">
+          <label for="checkbox" class="form-check-label">
+               <input type="checkbox" name="login_checkbox" required>
+               Remember me?
+           </label>
+      
+          <p>Forgot <a href="#" class="blue-text">
+              Password?</a></p>
+          </div>
+        </form>
+
+        <div class="text-center mb-3">
+          <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Login</button>
+        </div>
+        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Login
+          with:</p>
+
+        <div class="row my-3 d-flex justify-content-center">
+          <!--Facebook-->
+          <button type="button" class="btn btn-white mr-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
+          <!--Google +-->
+          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer pt-3 mb-1">
+        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#registerButton" id="registerButton" class="blue-text ml-1">
+            Register</a></p>
+      </div>
+  </div>
+    <!--/.Content-->
+
+      <!-- Register -->
+      <div class="modal-content d-none" id="register">
+      <!--Header-->
+      <div class="modal-header text-center border-0">
+        <h3 class="modal-title w-100 font-weight-bold my-3" id="myModalLabel"><strong>Register</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <div class="mb-3"><form>
+        <label data-error="wrong" data-success="right" for="Form-email1">Email&nbsp;/&nbsp;Mobile No.</label>
+          <input type="email" id="email123" class="form-control">
+        </div>
+
+        <div class="pb-3">
+        <label data-error="wrong" data-success="right" for="Form-pass1">Password</label>
+          <input type="password" id="pass1" class="form-control">
+        </div>
+
+        <div class="pb-3">
+        <label data-error="wrong" data-success="right" for="Form-pass2"> Confirm Password</label>
+          <input type="password" id="pass2" class="form-control">
+        </div>
+          </form>
+        <div class="text-center my-3">
+          <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Register</button>
+        </div>
+        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Register
+          with:</p>
+
+        <div class="row my-3 d-flex justify-content-center">
+          <!--Facebook-->
+          <button type="button" class="btn btn-white mr-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
+          <!--Google +-->
+          <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
+        </div>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer pt-3 mb-1">
+        <p class="font-small grey-text d-flex justify-content-end">Already a member? <a href="#loginButton" class="blue-text ml-1" id="loginButton">
+            Login</a></p>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+<!-- Modal -->

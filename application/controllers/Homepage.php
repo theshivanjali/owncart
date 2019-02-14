@@ -21,6 +21,12 @@ class Homepage extends CI_Controller {
 		$this->load->view('main/contact');
 		$this->load->view('main/footer');
 	}
+
+	public function category(){
+		$this->load->view('main/header');
+		$this->load->view('categories/categories');
+		$this->load->view('main/footer');
+	}
 }
 
 	
