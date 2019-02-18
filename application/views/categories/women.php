@@ -11,7 +11,6 @@
     <div class="carousel-item active">
       <img src="<?php echo base_url().'assets/img/10.jpg';?>" class="d-block w-100" alt="shirt">
     </div>
-    </div>
     <div class="carousel-item">
       <img src="<?php echo base_url().'assets/img/15.jpg';?>" class="d-block w-100" alt="tshirt">
     </div>

@@ -199,7 +199,7 @@ header {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color:white;
+    color: black;
     font-size: 16px;
     font-weight: 400;
   }
@@ -516,3 +516,11 @@ i:hover{ color: $purple-color;
 .fa-chevron-left, .fa-chevron-right:hover{
 color: black;
 }
+
+.field-icon {
+    float: right;
+    margin-right:5px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }

@@ -129,15 +129,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <!--Body-->
         <div class="mb-3">
         <form>
-        <label data-error="wrong" data-success="right" for="Form-email1">Email&nbsp;/&nbsp;Mobile No.</label>
+        <label data-error="wrong" for="Form-email1">Email&nbsp;/&nbsp;Mobile No.</label>
           <input type="email" id="login_email" class="form-control">
         </div>
 
         <div class="pb-3">
-        <label data-error="wrong" data-success="right" for="Form-pass1">Password</label>
-          <input type="password" id="login_password" class="form-control">
+        <label data-error="wrong" for="Form-pass1">Password</label>
+          <input type="password" id="loginPassword" class="form-control" name="loginPassword">
+          <span toggle="#loginPassword" class="fas fa-eye field-icon togglePassword"></span>
         </div>
-          <div class="font-small blue-text d-flex justify-content-between flex-row ">
+          <div class="font-small blue-text d-flex justify-content-between flex-row flex-wrap">
           <label for="checkbox" class="form-check-label">
                <input type="checkbox" name="login_checkbox" required>
                Remember me?

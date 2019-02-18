@@ -70,6 +70,18 @@ $('#scrollTop').on('click', function () {
   }, 1000);
 });
 
+//hide-show Password
+
+$(".togglePassword").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
 
 
 // Note: This example requires that you consent to location sharing when

@@ -153,13 +153,13 @@ header {
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   top: 0px;
-  
+  color: black;
 }
 
 .bg-hover-white {
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
-  
+  color: black;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -469,16 +469,24 @@ i:hover {
 }
 
 .carousel-inner .carousel-item img {
-  height: 100vh;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .fa-chevron-left, .fa-chevron-right {
-  color: white;
+  color: black;
 }
 
-.fa-chevron-left:hover, .fa-chevron-right:hover {
+.fa-chevron-left, .fa-chevron-right:hover {
   color: black;
+}
+
+.field-icon {
+  float: right;
+  margin-right: 5px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
 }
 /*# sourceMappingURL=creative.css.map */
