@@ -37,6 +37,8 @@ $(document).ready(function() {
   });
 });
 
+// To toggle Modal between Login And Registration
+
 $("#registerButton").click(function(){
 
   $('#register').removeClass('d-none');
@@ -50,6 +52,24 @@ $("#loginButton").click(function(){
   $('#register').addClass('d-none');
 
 });
+
+// scroll to top
+
+$(window).on('scroll', function () {
+  if ($(window).scrollTop() >= 1000) {
+      $('#scrollTop').fadeIn();
+  } else {
+      $('#scrollTop').fadeOut();
+  }
+});
+
+
+$('#scrollTop').on('click', function () {
+  $('html, body').animate({
+      scrollTop: 0
+  }, 1000);
+});
+
 
 
 // Note: This example requires that you consent to location sharing when

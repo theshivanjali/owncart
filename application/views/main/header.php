@@ -10,7 +10,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <title>Ecommerce</title>
 
    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/bootstrap.min.css'; ?>">
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/bootstrap.css'; ?>">
 
     <!-- Custom Fonts for this CSS -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -19,6 +19,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <!-- owl carousel css -->
+    <link rel='stylesheet' href="<?php echo base_url().'assets/css/owl.carousel.min.css'; ?>">
+    <link rel='stylesheet' href="<?php echo base_url().'assets/css/owl.theme.default.min.css'; ?>">
 
     <!-- Custom Stylesheet For this template -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/creative.css'; ?>">
@@ -45,7 +49,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <!-- Nav bar -->
       <nav class="navbar navbar-expand-lg navbar-light navbar-airy fixed-top py-lg-4 px-lg-5 text-uppercase mb-5"  id="mainNav" data-toggle="affix">
         <div class="container-fluid" id="main-navbar">
-          <a class="navbar-brand" href="#page-top">SHOP.</a>
+          <a class="navbar-brand" href="<?php echo base_url();?>">SHOP.</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -55,7 +59,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="<?php echo base_url(); ?>">Home</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Women</a>
+                <a class="nav-link" href="<?php echo base_url().'shop/women'; ?>">Women</a>
                  <div class="sub-menu">
                     <ul class="list-unstyled list-inline">
                     <li><a href="#">Ethnic Wear</a></li>
@@ -74,7 +78,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               </div> -->
                 </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Men</a>
+                <a class="nav-link" href="<?php echo base_url().'shop/men'; ?>">Men</a>
                 <div class="sub-menu">
                     <ul class="list-unstyled list-inline">
                     <li><a href="#">Ethnic Wear</a></li>
@@ -87,7 +91,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url().'homepage/contact'; ?>">Contact</a>
+                <a class="nav-link" href="<?php echo base_url().'shop/contact'; ?>">Contact</a>
               </li>
             </ul>
             <div class="d-flex align-items-center justify-content-between justify-content-lg-end mt-1 mb-2 my-lg-0">

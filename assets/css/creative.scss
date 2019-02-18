@@ -104,6 +104,7 @@ header {
   @media only screen and (max-width: 993px) {
 
     .navbar{
+        color: black;
         background: #fff;
     }
 
@@ -172,10 +173,12 @@ header {
   background: #fff;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
   top: 0px;
+  color: black;
 }
 
 .bg-hover-white {
     transition: all .2s ease-out;
+    color: black;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -196,7 +199,7 @@ header {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: rgb(0, 0, 0);
+    color:white;
     font-size: 16px;
     font-weight: 400;
   }
@@ -481,3 +484,35 @@ i:hover{ color: $purple-color;
 #map {
     height: 100%;
   }
+
+//   scroll to top
+
+#scrollTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: $purple-color;
+    border: solid 1px #343a40;
+    text-align: center;
+    background: #fff;
+    font-size: .8rem;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.carousel-inner .carousel-item img{
+   height:auto;
+    object-fit: cover;
+}
+
+.fa-chevron-left, .fa-chevron-right{
+    color: black;
+}
+
+.fa-chevron-left, .fa-chevron-right:hover{
+color: black;
+}

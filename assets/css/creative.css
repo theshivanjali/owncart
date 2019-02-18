@@ -89,6 +89,7 @@ header {
 
 @media only screen and (max-width: 993px) {
   .navbar {
+    color: black;
     background: #fff;
   }
   .sub-menu {
@@ -152,11 +153,13 @@ header {
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   top: 0px;
+  
 }
 
 .bg-hover-white {
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
+  
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -446,5 +449,36 @@ i:hover {
 /* Geolocation by html 5 */
 #map {
   height: 100%;
+}
+
+#scrollTop {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: #b42b96;
+  border: solid 1px #343a40;
+  text-align: center;
+  background: #fff;
+  font-size: .8rem;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.carousel-inner .carousel-item img {
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fa-chevron-left, .fa-chevron-right {
+  color: white;
+}
+
+.fa-chevron-left:hover, .fa-chevron-right:hover {
+  color: black;
 }
 /*# sourceMappingURL=creative.css.map */

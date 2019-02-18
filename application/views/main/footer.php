@@ -104,6 +104,10 @@
 
 </footer>
 
+<!-- scroll to top -->
+
+<div id="scrollTop"><i class="fa fa-long-arrow-alt-up"></i></div>
+
 <!-- Bootstrap core javascript -->
   <script src="<?php echo base_url().'assets/js/jquery.js'; ?>"></script>
   <script src="<?php echo base_url().'assets/js/popper.js'; ?>"></script>
@@ -113,5 +117,7 @@
  <script src="<?php echo base_url().'assets/js/creative.js'; ?>"></script>
  <!-- parallax effect javascript -->
 <script src="<?php echo base_url().'assets/js/parallax.min.js'; ?>"></script>
+<!-- owl Carousel Javascript -->
+<script src="<?php echo base_url().'assets/js/owl.carousel.min.js'; ?>"></script>
 </body>
 </html>

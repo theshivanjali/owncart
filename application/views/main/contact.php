@@ -1,4 +1,4 @@
-<main class="mt-8">
+<section class="mt-8">
       <div class="container">
         <!-- Breadcrumbs -->
         <ol class="breadcrumb justify-content-center">
@@ -13,7 +13,7 @@
         </div>
         </div>
     </div>
-</main>
+</section>
 <section class="bg-light p-5">
 		<div class="container">
 			<div class="row">
