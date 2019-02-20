@@ -83,6 +83,25 @@ $(".togglePassword").click(function() {
   }
 });
 
+//Owl Carousel 
+$('.product-slider').owlCarousel({
+  loop:true,
+  margin:10,
+  nav:false,
+  autoplay:false,
+  responsiveClass: true,
+  responsive:{
+      0:{
+          items:1
+      },
+      600:{
+          items:2
+      },
+      1000:{
+          items:5
+      }
+  }
+});
 
 // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service

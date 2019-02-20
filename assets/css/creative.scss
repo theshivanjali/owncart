@@ -4,7 +4,6 @@ $google-color: #DB4437;
 $font-20: 20px;
 $font-15: 15px;
 $ls:0;
-
 body{
 	margin: 0;
   /* 	font-family: 'Playfair Display', serif;*/
@@ -15,6 +14,11 @@ body{
     text-align: left;
     background-color: #fff;
 	
+}
+
+.py-7 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 a{
@@ -477,8 +481,16 @@ i:hover{ color: $purple-color;
 .z-depth-1a{
     -webkit-box-shadow: 0 2px 5px 0 rgba(192, 55, 255, 0.274), 0 4px 12px 0 rgba(180, 24, 219, 0.25); 
     box-shadow: 0 2px 5px 0 rgba(192, 55, 255, 0.274), 0 4px 12px 0 rgba(180, 24, 219, 0.25); 
-
 }
+
+.field-icon {
+    float: right;
+    margin-right:5px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+
 /* Geolocation by html 5 */
 
 #map {
@@ -504,10 +516,7 @@ i:hover{ color: $purple-color;
     cursor: pointer;
 }
 
-.carousel-inner .carousel-item img{
-   height:auto;
-    object-fit: cover;
-}
+//Carousel - Women
 
 .fa-chevron-left, .fa-chevron-right{
     color: black;
@@ -517,10 +526,60 @@ i:hover{ color: $purple-color;
 color: black;
 }
 
-.field-icon {
-    float: right;
-    margin-right:5px;
-    margin-top: -25px;
-    position: relative;
-    z-index: 2;
+@media (max-width: 992px){
+
+    .carousel-inner{
+        margin-top:100px;
+    }
   }
+
+.bg-img-1{
+      background: url(../img/10.jpg) no-repeat center;
+      background-size: cover;
+  }
+
+.bg-img-2{
+    background: url(../img/15.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.bg-img-3{
+    background: url(../img/14.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.multiply{
+
+    mix-blend-mode: multiply;
+}
+
+.block {
+    position: relative;
+}
+
+.block .block-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   }
+
+.owl-carousel .owl-wrapper {
+    display: flex !important;
+}
+.owl-carousel .owl-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: initial;
+}
+//    .product-slider .item img{
+//        height: 330px;
+//        object-fit: cover;
+//    }
+
+//    @media (max-width: 992px){
+//     .product-slider .item img{
+//         height: -webkit-fill-available;
+//     }
+// }

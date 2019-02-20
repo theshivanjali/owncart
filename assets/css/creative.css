@@ -9,6 +9,11 @@ body {
   background-color: #fff;
 }
 
+.py-7 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -446,6 +451,14 @@ i:hover {
   box-shadow: 0 2px 5px 0 rgba(192, 55, 255, 0.274), 0 4px 12px 0 rgba(180, 24, 219, 0.25);
 }
 
+.field-icon {
+  float: right;
+  margin-right: 5px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
 /* Geolocation by html 5 */
 #map {
   height: 100%;
@@ -468,12 +481,6 @@ i:hover {
   cursor: pointer;
 }
 
-.carousel-inner .carousel-item img {
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .fa-chevron-left, .fa-chevron-right {
   color: black;
 }
@@ -482,11 +489,54 @@ i:hover {
   color: black;
 }
 
-.field-icon {
-  float: right;
-  margin-right: 5px;
-  margin-top: -25px;
+@media (max-width: 992px) {
+  .carousel-inner {
+    margin-top: 100px;
+  }
+}
+
+.bg-img-1 {
+  background: url(../img/10.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.bg-img-2 {
+  background: url(../img/15.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.bg-img-3 {
+  background: url(../img/14.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.multiply {
+  mix-blend-mode: multiply;
+}
+
+.block {
   position: relative;
-  z-index: 2;
+}
+
+.block .block-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.owl-carousel .owl-wrapper {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.owl-carousel .owl-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: initial;
 }
 /*# sourceMappingURL=creative.css.map */
