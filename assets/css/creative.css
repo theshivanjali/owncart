@@ -526,17 +526,101 @@ i:hover {
           transform: translate(-50%, -50%);
 }
 
-.owl-carousel .owl-wrapper {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-
-.owl-carousel .owl-item img {
-  width: 100%;
-  height: 100%;
+.product-slider .item img {
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  max-width: initial;
+}
+
+@media screen and (max-width: 992px) {
+  .product-slider .item img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.product-hover-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.product-image {
+  position: relative;
+  border-bottom: 2px solid #495057;
+}
+
+.product-image:hover {
+  border-bottom: 2px solid #9a6ee2;
+}
+
+.product-image:hover .product-hover-overlay {
+  opacity: 1;
+}
+
+.product-image:hover .btn {
+  -webkit-transform: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+.product-hover-overlay .product-hover-overlay-buttons {
+  z-index: 3;
+}
+
+.product-hover-overlay .btn {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  padding: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.product-hover-overlay .btn.btn-buy {
+  width: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.product-hover-overlay .product-hover-overlay-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.m-img-1 {
+  background: url(../img/m6.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.m-img-2 {
+  background: url(../img/m7.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.m-img-3 {
+  background: url(../img/m4.jpg) no-repeat center;
+  background-size: cover;
 }
 /*# sourceMappingURL=creative.css.map */

@@ -60,7 +60,7 @@
     <img src="<?php echo base_url() . 'assets/img/5.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
       <h2 class="text-light letter-spacing-5">Winter Collection</h2>
-      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a></p> 
+      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>
@@ -69,7 +69,7 @@
     <img src="<?php echo base_url() . 'assets/img/16.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
       <h2 class="text-light letter-spacing-5">Western Collection</h2>
-      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a></p> 
+      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>
@@ -92,64 +92,208 @@
 </div>
 </section>
 
-<section class="mt-4">
+<section class="my-4">
   <div class="container">
     <div class="row">
     
     <div class="py-5 mx-auto">
-        <h2 class="display-4 letter-spacing-5">Fresh Arrivals</h2> 
+        <h2 class="display-4 letter-spacing-5">Trending Collection</h2> 
     </div>
-    <div class="owl-carousel product-slider owl-theme">
+    <div class="owl-carousel product-slider owl-theme mb-5">
     <!-- product -->
        <div class="item">
-         <img src="<?php echo base_url().'assets/img/w1.jpg';?>">
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w1.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="#" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="#" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+        <div class="py-2">
+          <p class="text-muted text-sm mb-1">Accessories</p>
+            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+        </div>
+
        </div>
    <!-- /product -->
      <!-- product -->
      <div class="item">
-         <img src="<?php echo base_url().'assets/img/w2.jpg';?>">
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w2.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="#" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="#" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
        </div>
    <!-- /product -->
     <!-- product -->
     <div class="item">
-         <img src="<?php echo base_url().'assets/img/w3.jpg';?>">
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w3.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
        </div>
    <!-- /product -->
     <!-- product -->
     <div class="item">
-         <img src="<?php echo base_url().'assets/img/w4.jpg';?>">
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w4.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
        </div>
    <!-- /product -->
     <!-- product -->
     <div class="item">
-         <img src="<?php echo base_url().'assets/img/w5.jpg';?>">
-       </div>
-   <!-- /product -->
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w5.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
+       </div>  <!-- /product -->
     <!-- product -->
     <div class="item">
-         <img src="<?php echo base_url().'assets/img/w6.jpg';?>">
-       </div>
-   <!-- /product -->
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w6.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
+       </div>  <!-- /product -->
     <!-- product -->
     <div class="item">
-         <img src="<?php echo base_url().'assets/img/w7.jpg';?>">
-       </div>
-   <!-- /product -->
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w7.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
+       </div>  <!-- /product -->
    <!-- product -->
    <div class="item">
-         <img src="<?php echo base_url().'assets/img/w8.jpg';?>">
-       </div>
-   <!-- /product -->
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w8.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
+       </div>   <!-- /product -->
     <!-- product -->
-    <div class="item">
-         <img src="<?php echo base_url().'assets/img/w9.jpg';?>">
-       </div>
-   <!-- /product -->
+   <div class="item">
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w9.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
+       </div>  <!-- /product -->
    <!-- product -->
    <div class="item">
-         <img src="<?php echo base_url().'assets/img/w10.jpg';?>">
-       </div>
-   <!-- /product -->
+         <div class="product-image">
+         <img src="<?php echo base_url() . 'assets/img/w10.jpg'; ?>" class=" img-fluid">
+         <div class="product-hover-overlay">
+            <a href="detail.html" class="product-hover-overlay-link"></a>
+              <div class="product-hover-overlay-buttons">
+                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <span>View</span></a>
+              </div>
+          </div>
+        </div>
+
+         <div class="py-2">
+                  <p class="text-muted text-sm mb-1">Accessories</p>
+                  <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
+                </div>
+
+       </div>   <!-- /product -->
    
    
         </div>
