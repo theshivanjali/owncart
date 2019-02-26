@@ -273,7 +273,7 @@
                   <p class="text-muted text-sm mb-1">Accessories</p>
                   <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
                 </div>
-
+  
        </div>  <!-- /product -->
    <!-- product -->
    <div class="item">

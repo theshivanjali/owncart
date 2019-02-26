@@ -125,22 +125,23 @@ onRefreshed: function () {
 }
 });
 
+  
+  function adjustProductsHeight(){
+    var productImage = $('.product-image');
+    var maxHeight = 0;
+    var items = productImage.find('.pimage');
+    items.each(function () {
+        var itemHeight = $(this).height();
+        if (itemHeight > maxHeight) {
+            maxHeight = itemHeight;
+        }
+    });
+    if (maxHeight > 0) {
+        items.height(maxHeight);
+    }
+  }
 
-  // function adjustProductsHeight(){
-  //   var maxHeight = 0;
-  //   var items = productSlider.find('.pimage');
-  //   items.each(function () {
-  //       var itemHeight = $(this).height();
-  //       if (itemHeight > maxHeight) {
-  //           maxHeight = itemHeight;
-  //       }
-  //   });
-  //   if (maxHeight > 0) {
-  //       items.height(maxHeight);
-  //   }
-  // }
-
-  // $(document).ready(adjustProductsHeight);
+  $(document).ready(adjustProductsHeight);
 // $(window).resize(adjustProductsHeight);
 
 //accordian
@@ -181,6 +182,23 @@ snapSlider.noUiSlider.on('update', function( values, handle ) {
 snapSlider.noUiSlider.on('change', function( values, handle ) {
     inputValues[handle].value = values[handle];
 });        
+
+
+
+ // ------------------------------------------------------- //
+    //    Colour form control 
+    // ------------------------------------------------------ //
+
+    $('.btn-colour').on('click', function (e) {
+      var button = $(this);
+
+      if (button.attr('data-allow-multiple') === undefined) {
+          button.parents('.colours-wrapper').find('.btn-colour').removeClass('active');
+      }
+
+      button.toggleClass('active');
+  });
+
 
 
 // Note: This example requires that you consent to location sharing when
