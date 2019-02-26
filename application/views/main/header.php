@@ -12,6 +12,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/bootstrap.css'; ?>">
 
+    <!-- Price RangeBar CSS -->
+    <link rel="stylesheet" href="<?php echo base_url() . 'assets/css/nouislider.css'; ?>">
+
     <!-- Custom Fonts for this CSS -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 

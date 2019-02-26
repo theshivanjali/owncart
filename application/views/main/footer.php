@@ -118,6 +118,9 @@
 <!-- owl Carousel Javascript -->
 <script src="<?php echo base_url().'assets/js/owl.carousel.min.js'; ?>"></script>
   
+<!--noUiSlider -->
+<script src="<?php echo base_url().'assets/js/nouislider.js'; ?>"></script>
+
  <!-- custom script  -->
  <script src="<?php echo base_url().'assets/js/creative.js'; ?>"></script>
 

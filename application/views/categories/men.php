@@ -103,7 +103,7 @@
     <!-- product -->
        <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/6.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/6.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="#" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -294,7 +294,6 @@
                 </div>
 
        </div>   <!-- /product -->
-
         </div>
      </div>
   </div>

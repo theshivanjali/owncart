@@ -623,4 +623,121 @@ i:hover {
   background: url(../img/m4.jpg) no-repeat center;
   background-size: cover;
 }
+
+.category-list ul li {
+  display: block;
+  padding: 0 10px;
+  text-align: left;
+}
+
+label {
+  cursor: pointer;
+}
+
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.styled-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.styled-checkbox + label:before {
+  content: '';
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border: 1px solid  #868e96;
+  -webkit-transition: background-color 0.15s ease-in-out,border 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,border 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,border 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out,border 0.15s ease-in-out, box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+}
+
+.styled-checkbox:hover + label:before {
+  background: black;
+}
+
+.styled-checkbox:checked + label:before {
+  background: black;
+}
+
+.styled-checkbox:disabled + label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+
+.styled-checkbox:disabled + label:before {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #ddd;
+}
+
+.styled-checkbox:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  -webkit-box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+          box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.noUi-connect {
+  background: #222;
+}
+
+.nouislider-values {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin-top: 1rem;
+  color: #868e96;
+  font-size: .7875rem;
+}
+
+.noUi-target {
+  background: #ddd;
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 3px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 3px;
+  height: 14px;
+  left: 0;
+  right: -2px !important;
+  top: -5px;
+  background: #222 !important;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.noUi-horizontal .noUi-handle::before, .noUi-horizontal .noUi-handle::after {
+  display: none;
+}
+
+.noUi-connect {
+  background: #222;
+}
 /*# sourceMappingURL=creative.css.map */

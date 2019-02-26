@@ -60,7 +60,7 @@
     <img src="<?php echo base_url() . 'assets/img/5.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
       <h2 class="text-light letter-spacing-5">Winter Collection</h2>
-      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
+      <p> <a href="<?php echo base_url().'shop/category'; ?>" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>
@@ -94,7 +94,7 @@
 
 <section class="my-4">
   <div class="container">
-    <div class="row">
+    <div class="row row-equal-height">
     
     <div class="py-5 mx-auto">
         <h2 class="display-4 letter-spacing-5">Trending Collection</h2> 
@@ -103,7 +103,7 @@
     <!-- product -->
        <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w1.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w1.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="#" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -123,7 +123,7 @@
      <!-- product -->
      <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w2.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w2.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="#" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -143,7 +143,7 @@
     <!-- product -->
     <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w3.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w3.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -163,7 +163,7 @@
     <!-- product -->
     <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w4.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w4.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -183,7 +183,7 @@
     <!-- product -->
     <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w5.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w5.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -202,7 +202,7 @@
     <!-- product -->
     <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w6.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w6.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -221,7 +221,7 @@
     <!-- product -->
     <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w7.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w7.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -240,7 +240,7 @@
    <!-- product -->
    <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w8.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w8.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -259,7 +259,7 @@
     <!-- product -->
    <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w9.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w9.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
@@ -278,7 +278,7 @@
    <!-- product -->
    <div class="item">
          <div class="product-image">
-         <img src="<?php echo base_url() . 'assets/img/w10.jpg'; ?>" class=" img-fluid">
+         <img src="<?php echo base_url() . 'assets/img/w10.jpg'; ?>" class="pimage img-fluid">
          <div class="product-hover-overlay">
             <a href="detail.html" class="product-hover-overlay-link"></a>
               <div class="product-hover-overlay-buttons">
