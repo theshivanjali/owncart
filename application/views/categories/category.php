@@ -1,13 +1,33 @@
-<section class="mt-8">
+<?php
+
+// echo "<pre>";
+// print_r($products);
+// echo "</pre>";
+$i = 1;
+
+$category = array();
+$color = array();
+foreach ($products as $list) {
+    $total = $i++;
+    $category[] = $list['subcategory'];
+    $color[] = $list['color'];
+}
+
+//echo $total;
+$uniqueCategory = array_unique($category);
+$uniqueColor = array_unique($color);
+
+?>
+<section class="mt-8 mb-5">
     <div class="container">
         <ol class="breadcrumb justify-content-center">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Men's Clothing</li>
+            <li class="breadcrumb-item active">Clothing</li>
         </ol>
     </div>
 
     <div class="text-center">
-        <h1 class="display-4 font-weight-bold letter-spacing-5 text-capitalize">Men's Clothing</h1>
+        <h1 class="display-4 font-weight-bold letter-spacing-5 text-capitalize">Clothing</h1>
     </div>
     </div>
 </section>
@@ -27,32 +47,18 @@
                             </h2>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
-                            <div class="card-body category-list">
+                            <div class="card-body category-list categoryFilter">
                                 <ul class="list-unstyled">
-                                    <li>
-                                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
-                                        <label for="styled-checkbox-1">T-Shirt</label>
-                                    </li>
-                                    <li>
-                                        <input class="styled-checkbox" id="shirt" type="checkbox" value="shirt">
-                                        <label for="shirt">Shirt</label>
-                                    </li>
-                                    <li>
-                                        <input class="styled-checkbox" id="trouser" type="checkbox" value="trouser">
-                                        <label for="trouser">Trouser</label>
-                                    </li>
-                                    <li>
-                                        <input class="styled-checkbox" id="indo" type="checkbox" value="indo">
-                                        <label for="indo">Indo-Western</label>
-                                    </li>
-                                    <li>
-                                        <input class="styled-checkbox" id="jacket" type="checkbox" value="jacket">
-                                        <label for="jacket">Jackets</label>
-                                    </li>
-                                    <li>
-                                        <input class="styled-checkbox" id="winter" type="checkbox" value="winter">
-                                        <label for="winter">Winters</label>
-                                    </li>
+                                    <?php 
+
+                                    foreach ($uniqueCategory as $category) {
+
+                                        ?>
+                                       <li>
+                                            <input class="styled-checkbox" id="<?php echo $category; ?>" type="checkbox">
+                                            <label for ="<?php echo $category; ?>"><?php echo $category; ?></label></li>
+                                    
+                                    <?php } ?>
                                 </ul>
                             </div>
                         </div>
@@ -68,24 +74,24 @@
                             <div class="card-body category-list">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <input class="styled-checkbox" id="xs" type="checkbox" value="xs">
-                                        <label for="xs">X-Small</label>
+                                        <input class="styled-checkbox" id="X-Small" type="checkbox" value="X-Small">
+                                        <label for="X-Small">X-Small</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="s" type="checkbox" value="s">
-                                        <label for="s">Small</label>
+                                        <input class="styled-checkbox" id="Small" type="checkbox" value="Small">
+                                        <label for="Small">Small</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="m" type="checkbox" value="m">
-                                        <label for="m">Medium</label>
+                                        <input class="styled-checkbox" id="Medium" type="checkbox" value="Medium">
+                                        <label for="Medium">Medium</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="l" type="checkbox" value="l">
-                                        <label for="l">Large</label>
+                                        <input class="styled-checkbox" id="Large" type="checkbox" value="Large">
+                                        <label for="Large">Large</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="xl" type="checkbox" value="xl">
-                                        <label for="xl">X-Large</label>
+                                        <input class="styled-checkbox" id="X-Large" type="checkbox" value="X-Large">
+                                        <label for="X-Large">X-Large</label>
                                     </li>
                                 </ul>
                             </div>
@@ -122,24 +128,24 @@
                             </h2>
                         </div>
                         <div id="collapseThree" class="collapse show" aria-labelledby="headingThree">
-                            <div class="card-body">
+                            <div class="card-body colorFilter">
                                 <ul class="list-inline colours-wrapper">
+
+                                    <?php 
+
+                                    foreach ($uniqueColor as $color) {
+
+                                ?>
+                                                    
                                     <li class="list-inline-item">
-                                        <label for="color" class="btn-colour" data-allow-multiple style="background-color:blue;"></label>
-                                        <input id="color" type="checkbox" value="blue" class="input-invisible">
+                                        <label for="<?php echo $color; ?>" class="btn-colour" data-allow-multiple style="background-color:<?php echo $color; ?>"></label>
+                                        <input id="<?php echo $color; ?>" type="checkbox" value="<?php echo $color; ?>" class="input-invisible">
                                     </li>
-                                    <li class="list-inline-item">
-                                        <label for="color1" class="btn-colour" data-allow-multiple style="background-color:red;"></label>
-                                        <input id="color1" type="checkbox" value="red" class="input-invisible">
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <label for="color2" class="btn-colour" data-allow-multiple style="background-color:green;"></label>
-                                        <input id="color2" type="checkbox" value="green" class="input-invisible">
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <label for="color3" class="btn-colour" data-allow-multiple style="background-color:black;"></label>
-                                        <input id="color3" type="checkbox" value="black" class="input-invisible">
-                                    </li>
+                                                    
+                                    <?php
+                                    }
+                                    ?>
+
                                 </ul>
                             </div>
                         </div>
@@ -181,7 +187,9 @@
                 <div class="col-12 mt-3 pt-3">
                     <div class="d-flex flex-row justify-content-between">
                         <div class="p-2">
-                            Showing <strong>1-12 </strong>of <strong>158 </strong>products
+                            Showing <strong>
+                                <?php echo "1 - " . $total; ?> </strong>of <strong>
+                                <?php echo $total; ?> </strong>products
                         </div>
                         <div>
                             <span class="mr-1">Sort by</span>
@@ -196,185 +204,48 @@
                 </div>
 
 
-                <div class="row mt-3 py-3">
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m1.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
+                <div class="row mt-3 py-3 mb-5">
+                   
+                    <?php
+                    foreach ($products as $lists) {
+                            ?>
+                            
+                        <div class="col-lg-4 my-4">
+                                        <div class="product-image"><img src="<?php echo base_url() . 'assets/img/' . $lists['pimage']; ?> "class="pimage img-fluid">
+                                        <div class="product-hover-overlay">
+                                         <a href="detail.html" class="product-hover-overlay-link"></a>
+                                            <div class="product-hover-overlay-buttons">
+                                                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                                                    <span>View</span>
+                                                </a>
+                                            </div>
+                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m9.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
+                                <div class="py-2">
+                                    <p class="text-muted text-sm mb-1"><?php echo $lists['subcategory']; ?></p>
+                                    <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark"><?php echo $lists['pname']; ?></a>
+                                    </h3><span class="text-dark"><i class="fas fa-rupee-sign"></i><?php echo $lists['price']; ?></span>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
+                             </div>
+                             
+                   <?php
+                    }
+                    ?>
 
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m15.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
+</div>
+               
 
-
-                </div>
-
-
-                <div class="row mt-3 py-3">
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m11.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m8.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m9.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="row mt-3 py-3">
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m10.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m13.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url() . 'assets/img/m12.jpg'; ?>" class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">Accessories</p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">College jacket</a></h3><span class="text-muted">$40.00</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <nav aria-label="page navigation" class="d-flex justify-content-center mb-5 mt-3">
-            <ul class="pagination">
-              <li class="page-item"><a href="#" aria-label="Previous" class="page-link"><span aria-hidden="true">Prev</span><span class="sr-only">Previous</span></a></li>
-              <li class="page-item active"><a href="#" class="page-link">1       </a></li>
-              <li class="page-item"><a href="#" class="page-link">2       </a></li>
-              <li class="page-item"><a href="#" class="page-link">3       </a></li>
-              <li class="page-item"><a href="#" class="page-link">4       </a></li>
-              <li class="page-item"><a href="#" class="page-link">5 </a></li>
-              <li class="page-item"><a href="#" aria-label="Next" class="page-link"><span aria-hidden="true">Next</span><span class="sr-only">Next     </span></a></li>
-            </ul>
-          </nav>
+                <!-- <nav aria-label="page navigation" class="d-flex justify-content-center mb-5 mt-3">
+                    <ul class="pagination">
+                        <li class="page-item"><a href="#" aria-label="Previous" class="page-link disabled"><span aria-hidden="true">Prev</span><span class="sr-only">Previous</span></a></li>
+                        <li class="page-item active"><a href="#" class="page-link">1 </a></li>
+                        <li class="page-item"><a href="#" class="page-link">2 </a></li>
+                        <li class="page-item"><a href="#" class="page-link">3 </a></li>
+                        <li class="page-item"><a href="#" class="page-link">4 </a></li>
+                        <li class="page-item"><a href="#" class="page-link">5 </a></li>
+                        <li class="page-item"><a href="#" aria-label="Next" class="page-link"><span aria-hidden="true">Next</span><span class="sr-only">Next </span></a></li>
+                    </ul>
+                </nav> -->
 
             </div>
         </div>

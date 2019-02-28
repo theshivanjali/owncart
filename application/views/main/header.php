@@ -65,10 +65,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="<?php echo base_url().'shop/women'; ?>">Women</a>
                  <div class="sub-menu">
                     <ul class="list-unstyled list-inline">
-                    <li><a href="#">Ethnic Wear</a></li>
-                    <li><a href="#">Western Wear</a></li>
-                    <li><a href="#">Formal Wear</a></li>
-                    <li><a href="#">Winter Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/women/ethnic';?>">Ethnic Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/women/western';?>">Western Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/women/formal';?>">Formal Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/women/winter';?>">Winter Wear</a></li>
                     </ul>  
                   </div>
                   <!-- <div class="dropdown">
@@ -84,9 +84,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="<?php echo base_url().'shop/men'; ?>">Men</a>
                 <div class="sub-menu">
                     <ul class="list-unstyled list-inline">
-                    <li><a href="#">Ethnic Wear</a></li>
-                    <li><a href="#">Formal Wear</a></li>
-                    <li><a href="#">Winter Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/men/ethnic';?>">Ethnic Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/men/formal';?>">Formal Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/men/winter';?>">Winter Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/products/men/western';?>">Western Wear</a></li>
                     </ul>  
                   </div>
               </li>
