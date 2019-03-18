@@ -59,8 +59,8 @@
     <div class="block">
     <img src="<?php echo base_url() . 'assets/img/m20.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
-      <h2 class="text-light letter-spacing-5">Casual Shirts</h2>
-      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
+      <h2 class="text-light letter-spacing-5">Casual Collection</h2>
+      <p> <a href="<?php echo base_url().'category/men/western';?>" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>
@@ -69,7 +69,7 @@
     <img src="<?php echo base_url() . 'assets/img/m8.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
       <h2 class="text-light letter-spacing-5">Ethnic Collection</h2>
-      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
+      <p> <a href="<?php echo base_url().'category/men/ethnic';?>" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>

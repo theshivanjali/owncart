@@ -29,6 +29,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <!-- Custom Stylesheet For this template -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/creative.css'; ?>">
+   
+   <!-- Bootstrap core javascript -->
+  <script src="<?php echo base_url().'assets/js/jquery.js'; ?>"></script>
+  <script src="<?php echo base_url().'assets/js/popper.js'; ?>"></script>
+	<script src="<?php echo base_url().'assets/js/bootstrap.js'; ?>"></script>
+   
    </head> 
 <body>
 
@@ -65,10 +71,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="<?php echo base_url().'shop/women'; ?>">Women</a>
                  <div class="sub-menu">
                     <ul class="list-unstyled list-inline">
-                    <li><a href="<?php echo base_url().'category/products/women/ethnic';?>">Ethnic Wear</a></li>
-                    <li><a href="<?php echo base_url().'category/products/women/western';?>">Western Wear</a></li>
-                    <li><a href="<?php echo base_url().'category/products/women/formal';?>">Formal Wear</a></li>
-                    <li><a href="<?php echo base_url().'category/products/women/winter';?>">Winter Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/women/ethnic';?>">Ethnic Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/women/western';?>">Western Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/women/formal';?>">Formal Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/women/winter';?>">Winter Wear</a></li>
                     </ul>  
                   </div>
                   <!-- <div class="dropdown">
@@ -84,10 +90,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <a class="nav-link" href="<?php echo base_url().'shop/men'; ?>">Men</a>
                 <div class="sub-menu">
                     <ul class="list-unstyled list-inline">
-                    <li><a href="<?php echo base_url().'category/products/men/ethnic';?>">Ethnic Wear</a></li>
-                    <li><a href="<?php echo base_url().'category/products/men/formal';?>">Formal Wear</a></li>
-                    <li><a href="<?php echo base_url().'category/products/men/winter';?>">Winter Wear</a></li>
-                    <li><a href="<?php echo base_url().'category/products/men/western';?>">Western Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/men/ethnic';?>">Ethnic Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/men/formal';?>">Formal Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/men/winter';?>">Winter Wear</a></li>
+                    <li><a href="<?php echo base_url().'category/men/western';?>">Western Wear</a></li>
                     </ul>  
                   </div>
               </li>

@@ -1,3 +1,5 @@
+//navbar shrink on top
+
 $(document).ready(function () {
 
   var toggleAffix = function (affixElement, scrollElement, wrapper) {
@@ -189,7 +191,7 @@ snapSlider.noUiSlider.on('change', function( values, handle ) {
     //    Colour form control 
     // ------------------------------------------------------ //
 
-    $('.btn-colour').on('click', function (e) {
+    $('.btn-colour').on('click', function() {
       var button = $(this);
 
       if (button.attr('data-allow-multiple') === undefined) {
@@ -198,6 +200,49 @@ snapSlider.noUiSlider.on('change', function( values, handle ) {
 
       button.toggleClass('active');
   });
+
+  // --------------------------------------------------------------------------------------------
+  // -----* .color : for color filters
+  // -----* .sub-category : for categories filter 
+  // ------------------------------------------------------------------------------------------>
+
+
+// //var $ = jQuery;
+// $(document).ready(function(){
+
+//     // var className;
+
+//       function filterData(className){
+//         var filter = [];
+//         $('.'+className+':checked').each(function(){
+//             filter.push($(this).val());
+//         });
+//         return filter;
+//       }
+
+//         function filter(){
+
+//         var category = filterData('sub-category');
+
+//         $.ajax({
+//           type: 'POST',
+//           url: 'filter/'+category,
+//            dataType: "JSON",
+//           data: {category : 'category'},
+//           success: function (data) {
+//            console.log(data); 
+//           }
+//         });
+//     }
+//      filter();
+// });
+
+
+
+
+
+
+
 
 
 

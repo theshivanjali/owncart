@@ -60,7 +60,7 @@
     <img src="<?php echo base_url() . 'assets/img/5.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
       <h2 class="text-light letter-spacing-5">Winter Collection</h2>
-      <p> <a href="<?php echo base_url().'shop/category'; ?>" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
+      <p> <a href="<?php echo base_url().'category/products/women/winter';?>" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>
@@ -69,7 +69,7 @@
     <img src="<?php echo base_url() . 'assets/img/16.jpg' ?>" class="img-fluid">
       <div class="block-content text-center">
       <h2 class="text-light letter-spacing-5">Western Collection</h2>
-      <p> <a href="#" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
+      <p> <a href="<?php echo base_url().'category/products/women/western';?>" class="btn btn-light text-uppercase mt-2">Shop now</a></p> 
       </div>
     </div>
     </div>
@@ -87,7 +87,8 @@
             <p class="mb-5">* Free shipping on orders over $70.</p>
             <p><a href="#" class="btn btn-light text-uppercase">Shop now</a></p>
       </div>
-      <div style="background: right bottom url(https://d19m59y37dris4.cloudfront.net/sell/1-2-3/img/photo/sale-circle.jpg) no-repeat; background-size: contain;" class="col-lg-6"></div>
+      <div style="background: right bottom url(https://d19m59y37dris4.cloudfront.net/sell/1-2-3/img/photo/sale-circle.jpg) no-repeat; background-size: contain;" class="col-lg-6">
+      </div>
     </div>
 </div>
 </section>

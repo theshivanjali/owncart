@@ -18,6 +18,7 @@ $uniqueCategory = array_unique($category);
 $uniqueColor = array_unique($color);
 
 ?>
+
 <section class="mt-8 mb-5">
     <div class="container">
         <ol class="breadcrumb justify-content-center">
@@ -54,11 +55,13 @@ $uniqueColor = array_unique($color);
                                     foreach ($uniqueCategory as $category) {
 
                                         ?>
-                                       <li>
-                                            <input class="styled-checkbox" id="<?php echo $category; ?>" type="checkbox">
-                                            <label for ="<?php echo $category; ?>"><?php echo $category; ?></label></li>
-                                    
-                                    <?php } ?>
+                                    <li>
+                                        <input class="styled-checkbox sub-category" id="<?php echo $category; ?>" type="checkbox" value="<?php echo $category; ?>">
+                                        <label for="<?php echo $category; ?>">
+                                            <?php echo $category; ?></label></li>
+
+                                    <?php 
+                                } ?>
                                 </ul>
                             </div>
                         </div>
@@ -135,16 +138,17 @@ $uniqueColor = array_unique($color);
 
                                     foreach ($uniqueColor as $color) {
 
-                                ?>
-                                                    
+                                        ?>
+
                                     <li class="list-inline-item">
                                         <label for="<?php echo $color; ?>" class="btn-colour" data-allow-multiple style="background-color:<?php echo $color; ?>"></label>
-                                        <input id="<?php echo $color; ?>" type="checkbox" value="<?php echo $color; ?>" class="input-invisible">
+                                        <input id="<?php echo $color; ?>" type="checkbox" value="<?php echo $color; ?>" class="input-invisible color">
                                     </li>
-                                                    
+
                                     <?php
-                                    }
-                                    ?>
+
+                                }
+                                ?>
 
                                 </ul>
                             </div>
@@ -205,35 +209,40 @@ $uniqueColor = array_unique($color);
 
 
                 <div class="row mt-3 py-3 mb-5">
-                   
+
                     <?php
                     foreach ($products as $lists) {
-                            ?>
-                            
-                        <div class="col-lg-4 my-4">
-                                        <div class="product-image"><img src="<?php echo base_url() . 'assets/img/' . $lists['pimage']; ?> "class="pimage img-fluid">
-                                        <div class="product-hover-overlay">
-                                         <a href="detail.html" class="product-hover-overlay-link"></a>
-                                            <div class="product-hover-overlay-buttons">
-                                                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                                    <span>View</span>
-                                                </a>
-                                            </div>
-                                     </div>
-                                </div>
-                                <div class="py-2">
-                                    <p class="text-muted text-sm mb-1"><?php echo $lists['subcategory']; ?></p>
-                                    <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark"><?php echo $lists['pname']; ?></a>
-                                    </h3><span class="text-dark"><i class="fas fa-rupee-sign"></i><?php echo $lists['price']; ?></span>
-                                </div>
-                             </div>
-                             
-                   <?php
-                    }
-                    ?>
+                        ?>
 
-</div>
-               
+                    <div class="col-lg-4 my-4">
+                        <div class="product-image"><img src="<?php echo base_url() . 'assets/img/' . $lists['pimage']; ?> " class="pimage img-fluid">
+                            <div class="product-hover-overlay">
+                                <a href="detail.html" class="product-hover-overlay-link"></a>
+                                <div class="product-hover-overlay-buttons">
+                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                                        <span>View</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <p class="text-muted text-sm mb-1">
+                                <?php echo $lists['subcategory']; ?>
+                            </p>
+                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">
+                                    <?php echo $lists['pname']; ?></a>
+                            </h3><span class="text-dark"><i class="fas fa-rupee-sign"></i>
+                                <?php echo $lists['price']; ?></span>
+                        </div>
+                    </div>
+
+                    <?php
+
+                }
+                ?>
+
+                </div>
+
 
                 <!-- <nav aria-label="page navigation" class="d-flex justify-content-center mb-5 mt-3">
                     <ul class="pagination">
@@ -251,3 +260,79 @@ $uniqueColor = array_unique($color);
         </div>
     </div>
 </section> 
+
+
+
+<script>
+// --------------------------------------------------------------------------------------------
+// -----* .color : for color filters
+// -----* .sub-category : for categories filter 
+// ------------------------------------------------------------------------------------------>
+
+//var $ = jQuery;
+// $(document).ready(function(){
+
+// // var className;
+//     function filter(){
+//     var category = filterData('sub-category');
+//     console.log(category);
+//     $.ajax({
+//       type: 'GET',
+//       url: '<?php echo base_url();?>filter/filterData/'+category,
+//        dataType: "JSON",
+//       data: {category : category},
+//       success: function (data) {
+//        console.log(data); 
+//       }
+//     });
+// }
+
+// function filterData(className){
+//     var filter = [];
+//     $('.'+className+':checked').click(function(){
+//         filter.push($(this).val());
+//     });
+//     return filter;
+//   }
+  
+//  filter();
+// });
+
+$(document).ready(function () {
+
+$('.sub-category').change(function () {
+  console.log('checkbox changed')
+  filter();
+});
+
+// var className;
+function filter() {
+  var category = [];
+  category = filterData('sub-category');
+  console.log(category);
+  $.ajax({
+    type: 'POST',
+    url: '<?php echo base_url();?>filter/',
+    dataType: "JSON",
+    data: { category: category },
+    success: function (data) {
+        console.log("success");
+      console.log(data);
+    }
+  });
+}
+
+function filterData(className) {
+  var filter = [];
+  $('.' + className + ':checked').each(function() {
+    filter.push($(this).val());
+  });
+  return filter;
+}
+
+//filter(); //if u want to fire on load (usefull when n items are checked by default...)
+});
+
+</script>
+
+

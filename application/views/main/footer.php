@@ -108,10 +108,6 @@
 
 <div id="scrollTop"><i class="fa fa-long-arrow-alt-up"></i></div>
 
-<!-- Bootstrap core javascript -->
-  <script src="<?php echo base_url().'assets/js/jquery.js'; ?>"></script>
-  <script src="<?php echo base_url().'assets/js/popper.js'; ?>"></script>
-	<script src="<?php echo base_url().'assets/js/bootstrap.js'; ?>"></script>
 	
 <!-- parallax effect javascript -->
 <script src="<?php echo base_url().'assets/js/parallax.min.js'; ?>"></script>
