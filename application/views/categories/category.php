@@ -1,28 +1,20 @@
 <?php
 
-// echo "<pre>";
-// print_r($products);
-// echo "</pre>";
+//echo "<pre>";
+//print_r($products);
+// print_r($color);
+// print_r($categories);
+//echo "</pre>";
 $i = 1;
-
-$category = array();
-$color = array();
 foreach ($products as $list) {
     $total = $i++;
-    $category[] = $list['subcategory'];
-    $color[] = $list['color'];
 }
-
-//echo $total;
-$uniqueCategory = array_unique($category);
-$uniqueColor = array_unique($color);
-
 ?>
 
 <section class="mt-8 mb-5">
     <div class="container">
         <ol class="breadcrumb justify-content-center">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>
             <li class="breadcrumb-item active">Clothing</li>
         </ol>
     </div>
@@ -52,13 +44,13 @@ $uniqueColor = array_unique($color);
                                 <ul class="list-unstyled">
                                     <?php 
 
-                                    foreach ($uniqueCategory as $category) {
-
+                                    foreach ($categories as $category) {
+                                        //  print_r($category);
                                         ?>
                                     <li>
-                                        <input class="styled-checkbox sub-category" id="<?php echo $category; ?>" type="checkbox" value="<?php echo $category; ?>">
-                                        <label for="<?php echo $category; ?>">
-                                            <?php echo $category; ?></label></li>
+                                        <input class="styled-checkbox sub-category" id="<?php echo $category['subcategory']; ?>" type="checkbox" value="<?php echo $category['subcategory']; ?>">
+                                        <label for="<?php echo $category['subcategory']; ?>">
+                                            <?php echo $category['subcategory']; ?></label></li>
 
                                     <?php 
                                 } ?>
@@ -77,23 +69,23 @@ $uniqueColor = array_unique($color);
                             <div class="card-body category-list">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <input class="styled-checkbox" id="X-Small" type="checkbox" value="X-Small">
+                                        <input class="styled-checkbox check-size" id="X-Small" type="checkbox" value="X-Small">
                                         <label for="X-Small">X-Small</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="Small" type="checkbox" value="Small">
+                                        <input class="styled-checkbox check-size" id="Small" type="checkbox" value="Small">
                                         <label for="Small">Small</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="Medium" type="checkbox" value="Medium">
+                                        <input class="styled-checkbox check-size" id="Medium" type="checkbox" value="Medium">
                                         <label for="Medium">Medium</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="Large" type="checkbox" value="Large">
+                                        <input class="styled-checkbox check-size" id="Large" type="checkbox" value="Large">
                                         <label for="Large">Large</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="X-Large" type="checkbox" value="X-Large">
+                                        <input class="styled-checkbox check-size" id="X-Large" type="checkbox" value="X-Large">
                                         <label for="X-Large">X-Large</label>
                                     </li>
                                 </ul>
@@ -136,13 +128,13 @@ $uniqueColor = array_unique($color);
 
                                     <?php 
 
-                                    foreach ($uniqueColor as $color) {
+                                    foreach ($color as $colorList) {
 
                                         ?>
 
                                     <li class="list-inline-item">
-                                        <label for="<?php echo $color; ?>" class="btn-colour" data-allow-multiple style="background-color:<?php echo $color; ?>"></label>
-                                        <input id="<?php echo $color; ?>" type="checkbox" value="<?php echo $color; ?>" class="input-invisible color">
+                                        <label for="<?php echo $colorList['color']; ?>" class="btn-colour" data-allow-multiple style="background-color:<?php echo $colorList['color']; ?>"></label>
+                                        <input id="<?php echo $colorList['color']; ?>" type="checkbox" value="<?php echo $colorList['color']; ?>" class="input-invisible color">
                                     </li>
 
                                     <?php
@@ -192,8 +184,8 @@ $uniqueColor = array_unique($color);
                     <div class="d-flex flex-row justify-content-between">
                         <div class="p-2">
                             Showing <strong>
-                                <?php echo "1 - " . $total; ?> </strong>of <strong>
-                                <?php echo $total; ?> </strong>products
+                                <?php echo "1 - " ?></strong><strong id="numRows">
+                                <?php echo $total; ?></strong>&nbsp;products
                         </div>
                         <div>
                             <span class="mr-1">Sort by</span>
@@ -208,18 +200,23 @@ $uniqueColor = array_unique($color);
                 </div>
 
 
-                <div class="row mt-3 py-3 mb-5">
+                <div class="row mt-3 py-3 mb-5" id="ajaxData">
 
                     <?php
                     foreach ($products as $lists) {
-                        ?>
+                        
+                        $id = $lists['pid'];
 
+                        ?>
+                            
                     <div class="col-lg-4 my-4">
-                        <div class="product-image"><img src="<?php echo base_url() . 'assets/img/' . $lists['pimage']; ?> " class="pimage img-fluid">
+                        <div class="product-image">
+                            <img src="<?php echo base_url().'assets/img/' . $lists['pimage']; ?> " class="pimage img-fluid">
                             <div class="product-hover-overlay">
-                                <a href="detail.html" class="product-hover-overlay-link"></a>
+                                <a href="<?php echo base_url().'product/index/'.$id; ?>" class="product-hover-overlay-link"></a>
                                 <div class="product-hover-overlay-buttons">
-                                    <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+
+                                    <a href="<?php echo base_url().'product/index/'.$id; ?>" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
                                         <span>View</span>
                                     </a>
                                 </div>
@@ -240,99 +237,69 @@ $uniqueColor = array_unique($color);
 
                 }
                 ?>
-
                 </div>
-
-
-                <!-- <nav aria-label="page navigation" class="d-flex justify-content-center mb-5 mt-3">
-                    <ul class="pagination">
-                        <li class="page-item"><a href="#" aria-label="Previous" class="page-link disabled"><span aria-hidden="true">Prev</span><span class="sr-only">Previous</span></a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1 </a></li>
-                        <li class="page-item"><a href="#" class="page-link">2 </a></li>
-                        <li class="page-item"><a href="#" class="page-link">3 </a></li>
-                        <li class="page-item"><a href="#" class="page-link">4 </a></li>
-                        <li class="page-item"><a href="#" class="page-link">5 </a></li>
-                        <li class="page-item"><a href="#" aria-label="Next" class="page-link"><span aria-hidden="true">Next</span><span class="sr-only">Next </span></a></li>
-                    </ul>
-                </nav> -->
-
             </div>
         </div>
     </div>
-</section> 
 
-
-
+</section>
 <script>
-// --------------------------------------------------------------------------------------------
-// -----* .color : for color filters
-// -----* .sub-category : for categories filter 
-// ------------------------------------------------------------------------------------------>
+    // --------------------------------------------------------------------------------------------
+    // -----* .color : for color filters
+    // -----* .sub-category : for categories filter 
+    // -----* .check-size: for size filters
+    // ------------------------------------------------------------------------------------------>
 
-//var $ = jQuery;
-// $(document).ready(function(){
+    $(document).ready(function() {
 
-// // var className;
-//     function filter(){
-//     var category = filterData('sub-category');
-//     console.log(category);
-//     $.ajax({
-//       type: 'GET',
-//       url: '<?php echo base_url();?>filter/filterData/'+category,
-//        dataType: "JSON",
-//       data: {category : category},
-//       success: function (data) {
-//        console.log(data); 
-//       }
-//     });
-// }
+        $('.sub-category').click(function() {
+            //   console.log('checkbox changed')
+            filter();
+        });
 
-// function filterData(className){
-//     var filter = [];
-//     $('.'+className+':checked').click(function(){
-//         filter.push($(this).val());
-//     });
-//     return filter;
-//   }
-  
-//  filter();
-// });
+        var segment = window.location.href.split('/');
+        console.log(segment);
+        var gender = segment[5];
+        //console.log(gender);
+        function filter() {
+            var size = [];
+            var category = [];
+            size = filterData('check-size');
+            category = filterData('sub-category');
+            console.log(size);
+            console.log(category);
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url(); ?>filter/',
+                dataType: "JSON",
+                data: {
+                    category: category,
+                    size: size,
+                    gender: gender
+                },
 
-$(document).ready(function () {
+                success: function(data) {
+                    // JSON.stringify(data);
+                    //console.log(data);
+                    //console.log(data.row);
+                    $('#numRows').html(data.row);
+                    $('#ajaxData').html(data.products);
+                    //    
+                },
+                error: function(jqXhr, textStatus, errorMessage) {
+                    console.log("Error: ", errorMessage);
+                }
+            });
+        }
 
-$('.sub-category').change(function () {
-  console.log('checkbox changed')
-  filter();
-});
+        function filterData(className) {
+            var filter = [];
+            $('.' + className + ':checked').each(function() {
+                filter.push($(this).val());
+            });
+            return filter;
+        }
 
-// var className;
-function filter() {
-  var category = [];
-  category = filterData('sub-category');
-  console.log(category);
-  $.ajax({
-    type: 'POST',
-    url: '<?php echo base_url();?>filter/',
-    dataType: "JSON",
-    data: { category: category },
-    success: function (data) {
-        console.log("success");
-      console.log(data);
-    }
-  });
-}
-
-function filterData(className) {
-  var filter = [];
-  $('.' + className + ':checked').each(function() {
-    filter.push($(this).val());
-  });
-  return filter;
-}
-
-//filter(); //if u want to fire on load (usefull when n items are checked by default...)
-});
-
-</script>
-
-
+        //filter(); //if u want to fire on load (usefull when n items are checked by default...)
+    });
+</script> 

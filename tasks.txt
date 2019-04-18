@@ -1,0 +1,26 @@
+1. Category Filters  ------------> working now
+2. Size Filters
+3. Color Filters
+4. Discount Filters
+5. Price Sliders
+6. Login
+7. Registration
+8. Checkout
+9. Add to Cart System
+10. Product Details Display ----------> working now
+11. Trending Collection to be dynamic
+
+
+//////////////////////////////////////////////////////
+
+-------------------------------Admin Panel----------------------------------------
+
+1. Admin Dashboard UI
+2. Add Product
+3. Delete Product
+4. Update Quantity
+5. User Update
+6. Push Notifications
+7. Payment Gateway
+8. SMS and Email Notifications
+9. Order List

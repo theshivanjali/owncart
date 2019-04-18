@@ -144,7 +144,7 @@ onRefreshed: function () {
   }
 
   $(document).ready(adjustProductsHeight);
-// $(window).resize(adjustProductsHeight);
+ $(window).resize(adjustProductsHeight);
 
 //accordian
 $('.collapse').on('shown.bs.collapse', function () {
@@ -153,7 +153,15 @@ $('.collapse').on('shown.bs.collapse', function () {
   $(this).parent().find(".fa-angle-up").removeClass("fa-angle-up").addClass("fa-angle-down");
 });
 
+//owl carousel for product details
 
+  var productDetailSlider = $('.product-detail-slider');
+  productDetailSlider.owlCarousel({
+    loop: true,
+    items: 1,
+    dots: true,
+    responsiveClass: false
+  });
 
 // nOuiSlider
 
@@ -239,7 +247,17 @@ snapSlider.noUiSlider.on('change', function( values, handle ) {
 
 
 
+ // ------------------------------------------------------- //
+    //  Button-style form labels used in detail.html
+    // ------------------------------------------------------ //
 
+    $('.detail-option-btn-label').on('click', function(){
+      var button = $(this);
+
+      button.parents('.detail-option').find('.detail-option-btn-label').removeClass('active');
+
+      button.toggleClass('active');
+  });
 
 
 

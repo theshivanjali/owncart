@@ -33,12 +33,6 @@ class Shop extends CI_Controller {
 		$this->load->view('categories/women');
 		$this->load->view('main/footer');
 	}
-
-	public function category(){
-		$this->load->view('main/header');
-		$this->load->view('categories/category');
-		$this->load->view('main/footer');
-	}
 }
 
 	

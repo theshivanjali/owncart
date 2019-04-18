@@ -9,6 +9,10 @@ body {
   background-color: #fff;
 }
 
+.workFont {
+  font-family: "Work Sans", sans-serif;
+}
+
 .py-7 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -790,5 +794,46 @@ label {
 .custom-select:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(2, 2, 2, 0.1);
           box-shadow: 0 0 0 0.2rem rgba(2, 2, 2, 0.1);
+}
+
+.product-detail-image {
+  width: 100%;
+  min-height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .product-detail-image {
+    height: calc(100vh - 125px - 2rem);
+  }
+}
+
+.detail-option-heading {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.5rem;
+  color: #282c2f;
+  margin-bottom: 25px;
+}
+
+.detail-option-btn-label {
+  position: relative;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active, .show > .btn-outline-secondary.dropdown-toggle {
+  background-color: #000000 !important;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+  padding: 1.5rem 7.1rem;
+  font-size: .850rem;
+  line-height: 1.5;
+  border-radius: 0;
+}
+
+label.btn.btn-lg.btn-outline-secondary.detail-option-btn-label {
+  padding: 1.1rem 1.5rem;
+  margin-left: .4rem;
 }
 /*# sourceMappingURL=creative.css.map */
