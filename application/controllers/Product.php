@@ -17,7 +17,7 @@ class Product extends CI_Controller
 
         if (!empty($productDetail['productDetail'])) {
             $this->load->view('main/header');
-            $this->load->view('categories/products', $productDetail);
+            $this->load->view('pages/products', $productDetail);
             $this->load->view('main/footer');
         }
 

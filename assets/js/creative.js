@@ -1,4 +1,8 @@
 //navbar shrink on top
+// $(document).ready(function () {
+//   console.log($('.detail-option-btn-label'));
+  
+// });
 
 $(document).ready(function () {
 
@@ -37,7 +41,57 @@ $(document).ready(function () {
   }, function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
   });
+
+  $('.detail-option-btn-label').on('click', function(){
+    var button = $(this);
+
+    button.parents('.detail-option').find('.detail-option-btn-label').removeClass('active');
+
+    button.toggleClass('active');
+  });
+
+
+    // nOuiSlider
+
+var snapSlider = document.getElementById('slider-snap');
+     // console.log(snapSlider);
+if(snapSlider){
+noUiSlider.create(snapSlider, {
+  start: [ 200, 3000 ],
+  snap: false,
+  connect: true,
+    step: 1,
+  range: {
+    'min': 100,
+    'max': 4000
+  }
 });
+
+var snapValues = [
+  document.getElementById('slider-snap-value-lower'),
+  document.getElementById('slider-snap-value-upper')
+];
+var inputValues = [
+  document.getElementById('slider-snap-input-lower'),
+  document.getElementById('slider-snap-input-upper')
+];
+snapSlider.noUiSlider.on('update', function( values, handle ) {
+  snapValues[handle].innerHTML = values[handle];
+});        
+
+snapSlider.noUiSlider.on('change', function( values, handle ) {
+    inputValues[handle].value = values[handle];
+});        
+
+}
+
+
+
+});
+
+
+
+
 
 // To toggle Modal between Login And Registration
 
@@ -163,36 +217,6 @@ $('.collapse').on('shown.bs.collapse', function () {
     responsiveClass: false
   });
 
-// nOuiSlider
-
-var snapSlider = document.getElementById('slider-snap');
-      
-noUiSlider.create(snapSlider, {
-  start: [ 200, 3000 ],
-  snap: false,
-  connect: true,
-    step: 1,
-  range: {
-    'min': 100,
-    'max': 4000
-  }
-});
-var snapValues = [
-  document.getElementById('slider-snap-value-lower'),
-  document.getElementById('slider-snap-value-upper')
-];
-var inputValues = [
-  document.getElementById('slider-snap-input-lower'),
-  document.getElementById('slider-snap-input-upper')
-];
-snapSlider.noUiSlider.on('update', function( values, handle ) {
-  snapValues[handle].innerHTML = values[handle];
-});        
-
-snapSlider.noUiSlider.on('change', function( values, handle ) {
-    inputValues[handle].value = values[handle];
-});        
-
 
 
  // ------------------------------------------------------- //
@@ -250,14 +274,7 @@ snapSlider.noUiSlider.on('change', function( values, handle ) {
  // ------------------------------------------------------- //
     //  Button-style form labels used in detail.html
     // ------------------------------------------------------ //
-
-    $('.detail-option-btn-label').on('click', function(){
-      var button = $(this);
-
-      button.parents('.detail-option').find('.detail-option-btn-label').removeClass('active');
-
-      button.toggleClass('active');
-  });
+ 
 
 
 

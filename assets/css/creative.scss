@@ -873,3 +873,21 @@ label.btn.btn-lg.btn-outline-secondary.detail-option-btn-label {
     padding: 1.1rem 1.5rem;
     margin-left: .4rem;
 }
+
+input:not([type='submit']) + .input-requirement{
+	overflow:hidden;
+	max-height: 0;
+	transition: max-height 1s ease-out;
+}
+
+input:not([type='submit']):hover + .input-requirement,
+input:not([type='submit']):active + .input-requirement,
+input:not([type='submit']):focus + .input-requirement{
+max-height: 1000px;
+transition: max-height 1s ease-in;	
+}
+
+.input-requirement{
+    color: $purple-color;
+    font-style: italic;
+}

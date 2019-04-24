@@ -24,13 +24,14 @@ class Shop extends CI_Controller {
 
 	public function men(){
 		$this->load->view('main/header');
-		$this->load->view('categories/men');
+		$this->load->view('pages/men');
+		$this->load->view('pages/trending-men');
 		$this->load->view('main/footer');
 	}
 
 	public function women(){
 		$this->load->view('main/header');
-		$this->load->view('categories/women');
+		$this->load->view('pages/women');
 		$this->load->view('main/footer');
 	}
 }

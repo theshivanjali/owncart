@@ -318,7 +318,7 @@ foreach ($productDetail as $product) {
     </div>
   </div>
 </section>
-
+<!-- 
 <script>
   $('.detail-option-btn-label').on('click', function() {
     var button = $(this);
@@ -327,4 +327,4 @@ foreach ($productDetail as $product) {
 
     button.toggleClass('active');
   });
-</script>
+</script> -->

@@ -27,7 +27,7 @@ class Category extends CI_Controller
         }
         if (!empty($list['products'])) {
             $this->load->view('main/header');
-            $this->load->view('categories/category', $list);
+            $this->load->view('pages/category', $list);
             $this->load->view('main/footer');
         }
     }

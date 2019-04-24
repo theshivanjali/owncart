@@ -836,4 +836,24 @@ label.btn.btn-lg.btn-outline-secondary.detail-option-btn-label {
   padding: 1.1rem 1.5rem;
   margin-left: .4rem;
 }
+
+input:not([type='submit']) + .input-requirement {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 1s ease-out;
+  transition: max-height 1s ease-out;
+}
+
+input:not([type='submit']):hover + .input-requirement,
+input:not([type='submit']):active + .input-requirement,
+input:not([type='submit']):focus + .input-requirement {
+  max-height: 1000px;
+  -webkit-transition: max-height 1s ease-in;
+  transition: max-height 1s ease-in;
+}
+
+.input-requirement {
+  color: #b42b96;
+  font-style: italic;
+}
 /*# sourceMappingURL=creative.css.map */
