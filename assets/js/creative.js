@@ -57,13 +57,12 @@ var snapSlider = document.getElementById('slider-snap');
      // console.log(snapSlider);
 if(snapSlider){
 noUiSlider.create(snapSlider, {
-  start: [ 200, 3000 ],
-  snap: false,
+  start: [100, 10000],
   connect: true,
     step: 1,
   range: {
     'min': 100,
-    'max': 4000
+    'max': 50000
   }
 });
 
@@ -86,8 +85,21 @@ snapSlider.noUiSlider.on('change', function( values, handle ) {
 }
 
 
-
+$('.btn-items-decrease').on('click', function () {
+  var input = $(this).siblings('.input-items');
+  if (parseInt(input.val(), 10) >= 1) {
+      input.val(parseInt(input.val(), 10) - 1);
+  }
 });
+
+$('.btn-items-increase').on('click', function () {
+  var input = $(this).siblings('.input-items');
+  input.val(parseInt(input.val(), 10) + 1);
+});
+
+
+
+}); //Document . ready ends
 
 
 
@@ -214,6 +226,7 @@ $('.collapse').on('shown.bs.collapse', function () {
     loop: true,
     items: 1,
     dots: true,
+  snap: false,
     responsiveClass: false
   });
 

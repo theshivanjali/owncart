@@ -32,6 +32,7 @@ class Shop extends CI_Controller {
 	public function women(){
 		$this->load->view('main/header');
 		$this->load->view('pages/women');
+		$this->load->view('pages/trending-women');
 		$this->load->view('main/footer');
 	}
 }

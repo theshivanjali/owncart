@@ -12,47 +12,50 @@ class Filter extends CI_Controller
         $this->load->model('products');
     }
 
+    public function toString($className)
+    {
+        if (!empty($className)) {
+
+            for ($i = 0; $i < count($className); $i++) {
+                $arr[] = $className[$i];
+            }    
+            return implode(",", $arr);
+        }
+    }
+
     public function index()
     {
 
         $subCategory = $this->input->post('category[]');
         $size = $this->input->post('size[]');
+        $color = $this->input->post('color[]');
+        $discount = $this->input->post('discount[]');
+        $maximumPrice = $this->input->post('maximumPrice');
+        $minimumPrice = $this->input->post('minimumPrice');
         $gender = $this->input->post('gender');
 
-        //print_r($subCategory);
+        $categoryList = $this->toString($subCategory);
+        $sizeList = $this->toString($size);
+        $colorList = $this->toString($color);
+        $discountList = $this->toString($discount);
+    
+       $list = $this->filtersModel->filterData($categoryList, $sizeList, $colorList, $discountList, $maximumPrice, $minimumPrice, $gender);
 
-        //$categorySize = sizeof($subCategory);
-
-        //echo $categorySize;
-        // $data = count($subCategory);
-        //var_dump($data);
-        //$variable = sizeof($subCategory);
-        //echo $variable;
-        if (!empty($subCategory)) {
-
-            for ($i = 0; $i < count($subCategory); $i++) {
-                $arr[] = $subCategory[$i];
-            }
-            $categoryList = implode(",", $arr);
-
-            //echo $categoryList;
-            $list = $this->filtersModel->filterProduct($categoryList, $gender);
-        } else {
-
-            $list = $this->products->allproducts($gender);
-        }
+       //print_r($list);
 
         $output = '';
         $i = 0;
+
+     if(!empty($list))   {
         foreach ($list as $lists) {
             $i++;
             $output .= '<div class="col-lg-4 my-4">
     <div class="product-image">
     <img src="' . base_url() . 'assets/img/' . $lists['pimage'] . '" class="pimage img-fluid">
         <div class="product-hover-overlay">
-            <a href="detail.html" class="product-hover-overlay-link"></a>
+            <a href="' . base_url() . 'product/index/' . $lists['pid'] . '" class="product-hover-overlay-link"></a>
             <div class="product-hover-overlay-buttons">
-                <a href="detail.html" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                <a href="' . base_url() . 'product/index/' . $lists['pid'] . '" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
                     <span>View</span>
                 </a>
             </div>
@@ -68,24 +71,20 @@ class Filter extends CI_Controller
     </div>
 </div>';
         }
-
-        $data = array('row' => $i, 'products' => $output);
-        echo json_encode($data);
     }
+        else {
+            $output.= '<div class="mt-8 mx-auto">
+                <h2>Oops! No Results Found!</h2>
+                <p class="text-center">Please Reset the Filters and try again!</p>
+            </div>';
+        }
 
-    public function filterData()
-    {
+         $data = array('row' => $i, 'products' => $output);
+         echo json_encode($data);
+   }
+ }
+   
 
-        $subCategory = $this->input->post('category[]');
-
-        return $subCategory;
-
-        // $list = $this->filtersModel->filterProduct($subCategory);
-        // echo "<pre>";
-        // print_r($list);
-        // echo "</pre>";
-    }
-}
 // category: "ethnic"
 // color: "#000066"
 // discount: "0"
@@ -95,5 +94,3 @@ class Filter extends CI_Controller
 // pname: "Navy Blue indo-Western"
 // price: "1049"
 // size: "X-Large,Large,Medium,"
-
-

@@ -1,26 +1,33 @@
 <?php
 
-//echo "<pre>";
-//print_r($products);
+// echo "<pre>";
+// print_r($products);
 // print_r($color);
 // print_r($categories);
-//echo "</pre>";
+// echo "</pre>";
 $i = 1;
 foreach ($products as $list) {
     $total = $i++;
+  // echo $list['price'];
+   $priceArray[] = $list['price']; 
 }
+
+// print_r($priceArray);
+$maximumPrice = max($priceArray);
+$minimumPrice = min($priceArray);
+// echo $maximumPrice." ".$minimumPrice;
 ?>
 
 <section class="mt-8 mb-5">
     <div class="container">
         <ol class="breadcrumb justify-content-center">
-            <li class="breadcrumb-item"><a href="<?php echo base_url();?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
             <li class="breadcrumb-item active">Clothing</li>
         </ol>
     </div>
 
     <div class="text-center">
-        <h1 class="display-4 font-weight-bold letter-spacing-5 text-capitalize">Clothing</h1> 
+        <h1 class="display-4 font-weight-bold letter-spacing-5 text-capitalize">Clothing</h1>
     </div>
     </div>
 </section>
@@ -42,17 +49,17 @@ foreach ($products as $list) {
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
                             <div class="card-body category-list categoryFilter">
                                 <ul class="list-unstyled">
-                                    <?php 
+                                    <?php
 
                                     foreach ($categories as $category) {
                                         //  print_r($category);
                                         ?>
-                                    <li>
-                                        <input class="styled-checkbox sub-category" id="<?php echo $category['subcategory']; ?>" type="checkbox" value="<?php echo $category['subcategory']; ?>">
-                                        <label for="<?php echo $category['subcategory']; ?>">
-                                            <?php echo $category['subcategory']; ?></label></li>
+                                        <li>
+                                            <input class="styled-checkbox sub-category" id="<?php echo $category['subcategory']; ?>" type="checkbox" value="<?php echo $category['subcategory']; ?>">
+                                            <label for="<?php echo $category['subcategory']; ?>">
+                                                <?php echo $category['subcategory']; ?></label></li>
 
-                                    <?php 
+                                    <?php
                                 } ?>
                                 </ul>
                             </div>
@@ -69,23 +76,23 @@ foreach ($products as $list) {
                             <div class="card-body category-list">
                                 <ul class="list-unstyled">
                                     <li>
-                                        <input class="styled-checkbox check-size" id="X-Small" type="checkbox" value="X-Small">
+                                        <input class="styled-checkbox check-size" id="X-Small" type="checkbox" value="xs">
                                         <label for="X-Small">X-Small</label>
                                     </li>
-                                    <li>
-                                        <input class="styled-checkbox check-size" id="Small" type="checkbox" value="Small">
+                                    <li>    
+                                        <input class="styled-checkbox check-size" id="Small" type="checkbox" value="s">
                                         <label for="Small">Small</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox check-size" id="Medium" type="checkbox" value="Medium">
+                                        <input class="styled-checkbox check-size" id="Medium" type="checkbox" value="m">
                                         <label for="Medium">Medium</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox check-size" id="Large" type="checkbox" value="Large">
+                                        <input class="styled-checkbox check-size" id="Large" type="checkbox" value="l">
                                         <label for="Large">Large</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox check-size" id="X-Large" type="checkbox" value="X-Large">
+                                        <input class="styled-checkbox check-size" id="X-Large" type="checkbox" value="xl">
                                         <label for="X-Large">X-Large</label>
                                     </li>
                                 </ul>
@@ -105,10 +112,10 @@ foreach ($products as $list) {
                             <div id="priceFilterMenu">
                                 <div id="slider-snap" class="mt-4 mt-lg-0"> </div>
                                 <div class="nouislider-values">
-                                    <div class="min">From $<span id="slider-snap-value-lower"></span></div>
-                                    <div class="max">To $<span id="slider-snap-value-upper"></span></div>
-                                    <input type="hidden" name="pricefrom" id="slider-snap-input-lower" value="40" class="slider-snap-input">
-                                    <input type="hidden" name="priceto" id="slider-snap-input-upper" value="110" class="slider-snap-input">
+                                    <div class="min">From <i class="fas fa-rupee-sign"></i>&nbsp;<span id="slider-snap-value-lower"></span></div>
+                                    <div class="max">To <i class="fas fa-rupee-sign"></i>&nbsp;<span id="slider-snap-value-upper"></span></div>
+                                    <input type="hidden" name="pricefrom" id="slider-snap-input-lower" value="100" class="slider-snap-input">
+                                    <input type="hidden" name="priceto" id="slider-snap-input-upper" value="10000" class="slider-snap-input">
                                 </div>
                             </div>
 
@@ -126,16 +133,16 @@ foreach ($products as $list) {
                             <div class="card-body colorFilter">
                                 <ul class="list-inline colours-wrapper">
 
-                                    <?php 
+                                    <?php
 
                                     foreach ($color as $colorList) {
 
                                         ?>
 
-                                    <li class="list-inline-item">
-                                        <label for="<?php echo $colorList['color']; ?>" class="btn-colour" data-allow-multiple style="background-color:<?php echo $colorList['color']; ?>"></label>
-                                        <input id="<?php echo $colorList['color']; ?>" type="checkbox" value="<?php echo $colorList['color']; ?>" class="input-invisible color">
-                                    </li>
+                                        <li class="list-inline-item">
+                                            <label for="<?php echo $colorList['color']; ?>" class="btn-colour" data-allow-multiple style="background-color:<?php echo $colorList['color']; ?>"></label>
+                                            <input id="<?php echo $colorList['color']; ?>" type="checkbox" value="<?php echo $colorList['color']; ?>" class="input-invisible color styled-checkbox">
+                                        </li>
 
                                     <?php
 
@@ -159,16 +166,16 @@ foreach ($products as $list) {
 
                                 <ul class="list-unstyled">
                                     <li>
-                                        <input class="styled-checkbox" id="10" type="checkbox" value="10">
+                                        <input class="styled-checkbox discount" id="10" type="checkbox" value="10">
                                         <label for="10">10% or above</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="20" type="checkbox" value="20">
+                                        <input class="styled-checkbox discount" id="20" type="checkbox" value="20">
                                         <label for="20">20% or above</label>
                                     </li>
                                     <li>
-                                        <input class="styled-checkbox" id="30" type="checkbox" value="30">
-                                        <label for="30">Upto 50%</label>
+                                        <input class="styled-checkbox discount" id="30" type="checkbox" value="30">
+                                        <label for="30">Upto 30%</label>
                                     </li>
                                 </ul>
                             </div>
@@ -204,34 +211,34 @@ foreach ($products as $list) {
 
                     <?php
                     foreach ($products as $lists) {
-                        
+
                         $id = $lists['pid'];
 
                         ?>
-                            
-                    <div class="col-lg-4 my-4">
-                        <div class="product-image">
-                            <img src="<?php echo base_url().'assets/img/' . $lists['pimage']; ?> " class="pimage img-fluid">
-                            <div class="product-hover-overlay">
-                                <a href="<?php echo base_url().'product/index/'.$id; ?>" class="product-hover-overlay-link"></a>
-                                <div class="product-hover-overlay-buttons">
 
-                                    <a href="<?php echo base_url().'product/index/'.$id; ?>" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
-                                        <span>View</span>
-                                    </a>
+                        <div class="col-lg-4 my-4">
+                            <div class="product-image">
+                                <img src="<?php echo base_url() . 'assets/img/' . $lists['pimage']; ?> " class="pimage img-fluid">
+                                <div class="product-hover-overlay">
+                                    <a href="<?php echo base_url() . 'product/index/' . $id; ?>" class="product-hover-overlay-link"></a>
+                                    <div class="product-hover-overlay-buttons">
+
+                                        <a href="<?php echo base_url() . 'product/index/' . $id; ?>" class="btn btn-outline-dark btn-buy"><i class="fa-search fa"></i>
+                                            <span>View</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="py-2">
+                                <p class="text-muted text-sm mb-1">
+                                    <?php echo $lists['subcategory']; ?>
+                                </p>
+                                <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">
+                                        <?php echo $lists['pname']; ?></a>
+                                </h3><span class="text-dark"><i class="fas fa-rupee-sign"></i>
+                                    <?php echo $lists['price']; ?></span>
+                            </div>
                         </div>
-                        <div class="py-2">
-                            <p class="text-muted text-sm mb-1">
-                                <?php echo $lists['subcategory']; ?>
-                            </p>
-                            <h3 class="h6 text-uppercase mb-1"><a href="#" class="text-dark">
-                                    <?php echo $lists['pname']; ?></a>
-                            </h3><span class="text-dark"><i class="fas fa-rupee-sign"></i>
-                                <?php echo $lists['price']; ?></span>
-                        </div>
-                    </div>
 
                     <?php
 
@@ -248,58 +255,85 @@ foreach ($products as $list) {
     // -----* .color : for color filters
     // -----* .sub-category : for categories filter 
     // -----* .check-size: for size filters
+    // -----* .discount: for discout check-boxes
     // ------------------------------------------------------------------------------------------>
+    const values = document.querySelectorAll('.styled-checkbox');
 
-    $(document).ready(function() {
 
-        $('.sub-category').click(function() {
-            //   console.log('checkbox changed')
-            filter();
-        });
-
-        var segment = window.location.href.split('/');
-        console.log(segment);
-        var gender = segment[5];
-        //console.log(gender);
-        function filter() {
-            var size = [];
-            var category = [];
-            size = filterData('check-size');
-            category = filterData('sub-category');
-            console.log(size);
-            console.log(category);
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo base_url(); ?>filter/',
-                dataType: "JSON",
-                data: {
-                    category: category,
-                    size: size,
-                    gender: gender
-                },
-
-                success: function(data) {
-                    // JSON.stringify(data);
-                    //console.log(data);
-                    //console.log(data.row);
-                    $('#numRows').html(data.row);
-                    $('#ajaxData').html(data.products);
-                    //    
-                },
-                error: function(jqXhr, textStatus, errorMessage) {
-                    console.log("Error: ", errorMessage);
-                }
-            });
-        }
-
-        function filterData(className) {
-            var filter = [];
-            $('.' + className + ':checked').each(function() {
-                filter.push($(this).val());
-            });
-            return filter;
-        }
-
-        //filter(); //if u want to fire on load (usefull when n items are checked by default...)
+    // const category = [];
+    // const size = [];
+    // const color = [];
+    // const discount = [];        
+    $(values).click(function() {
+        //   console.log('checkbox changed');
+        filter();
     });
-</script> 
+
+    // function uniqueArray(arr){
+    //     var result = [...new Set(arr)];
+    //     return result;
+    // }
+
+
+    var segment = window.location.href.split('/');
+    console.log(segment);
+    var gender = segment[5];
+    //console.log(gender);
+
+    function filter() {
+        var size = [];
+        var category = [];
+        var color = [];
+        var discount = [];
+        size = filterData('check-size');
+        category = filterData('sub-category');
+        color = filterData('color');
+        discount = filterData('discount');
+
+        var minimumPrice = document.querySelector('#slider-snap-input-lower').value;
+        var maximumPrice = document.querySelector('#slider-snap-input-upper').value;       
+        //    console.group('Size');
+        //     console.log(size);
+        //     console.log(category);
+        //     console.log(color);
+        //     console.log(discount);
+        //     console.groupEnd();    
+
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo base_url(); ?>filter/',
+            dataType: "JSON",
+            data: {
+                category: category,
+                size: size,
+                color: color,
+                discount: discount,
+                minimumPrice: minimumPrice,
+                maximumPrice: maximumPrice,
+                gender: gender
+            },
+
+            success: function(data) {
+             JSON.stringify(data);
+                //console.log(data);
+                //console.log(data.row);
+                $('#numRows').html(data.row);
+                $('#ajaxData').html(data.products);
+                //    
+            },
+            error: function(jqXhr, textStatus, errorMessage) {
+                console.log("Error: ", errorMessage);
+            }
+        });
+    }
+
+  function filterData(className) {
+        var filter = [];
+        $('.' + className + ':checked').each(function() {
+            filter.push($(this).val());
+        });
+        return filter;
+    }
+
+    //filter(); //if u want to fire on load (usefull when n items are checked by default...)
+</script>
