@@ -13,7 +13,7 @@ foreach ($productDetail as $product) {
     <div class="container">
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
-        <li class="breadcrumb-item"><a href="<?php echo base_url() . 'pages/' . $product['gender'] . '/' . $product['category']; ?>"><?php echo ucfirst($product['category']); ?></a></li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url() . 'category/' . $product['gender'] . '/' . $product['category']; ?>"><?php echo ucfirst($product['category']); ?></a></li>
         <li class="breadcrumb-item active"><?php echo $product['pname']; ?></li>
       </ol>
     </div>
@@ -92,6 +92,7 @@ foreach ($productDetail as $product) {
                   <input type="radio" name="size" value="xs" id="xs" required class="input-invisible">
                 </label>
                 <input type="hidden" name="pid" value="<?php echo $product['pid']; ?>" id="pid">
+                <input type="hidden" name="price" value="<?php echo $product['price']; ?>" id="price">
 
                 <a href="#">
                   <p class="workFont text-muted mt-2">Size Guide</p>
@@ -108,6 +109,7 @@ foreach ($productDetail as $product) {
                 </div>
               </div>
             </div>
+
             <div>
               <button type="submit" class="btn btn-lg btn-outline-dark text-uppercase mt-5" id="addToCart"><i class="fa fa-shopping-cart mr-2"></i>Add to Cart</button>
             </div>

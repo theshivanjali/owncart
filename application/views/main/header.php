@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
+$data = $this->session->userdata();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +54,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <div class="col-lg-12">
             <ul class="list-inline mb-0">
               <li class="list-inline-item mr-2"><i class="fas fa-phone"></i> +91-12345-67890</li>
-              <li class="list-inline-item border-left px-3 d-none d-sm-inline"> Free Shipping on orders over $100</li>
+              <li class="list-inline-item border-left px-3 d-none d-sm-inline"> Free Shipping on orders over <i class="fa fa-rupee-sign"></i>&nbsp;100</li>
             </ul>
           </div>
         </div>
@@ -60,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-airy fixed-top py-lg-4 px-lg-5 text-uppercase mb-5" id="mainNav" data-toggle="affix">
       <div class="container-fluid" id="main-navbar">
-        <a class="navbar-brand" href="<?php echo base_url(); ?>">SHOP.</a>
+        <a class="navbar-brand" href="<?php echo base_url(); ?>">OWNCART.</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -108,15 +112,42 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </ul>
           <div class="d-flex align-items-center justify-content-between justify-content-lg-end mt-1 mb-2 my-lg-0">
             <!-- Search Button-->
-            <div class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
-              <!-- <form><input type="search" class="form-control" name="search" placeholder="search" aria-label="Search"> </form> -->
+            <!-- <div class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-search"></i></a> -->
+            <!-- <form><input type="search" class="form-control" name="search" placeholder="search" aria-label="Search"> </form> -->
+            <!-- </div> -->
+
+            <?php if (isset($data['userID'])) {
+
+              echo ' <div class="nav-item dropdown"><a id="userdetails" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fas fa-user"></i>
+              </a>
+            <div aria-labelledby="userdetails" class="dropdown-menu dropdown-menu-right"> 
+              <a href="'.base_url('order/orderList').'" class="dropdown-item">Orders</a>
+               
+              <div class="dropdown-divider my-0"></div><a href="'.base_url('user/logout').'" class="dropdown-item">Logout</a>
             </div>
-            <div data-toggle="modal" data-target="#logModal" class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-            </div>
+          </div>';
+            } else {
+              echo '
+                <div data-toggle="modal" data-target="#logModal" class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+              </div>
+  ';
+            }
+
+            // <a href="#" class="dropdown-item">Addresses</a>
+            //    <a href="#" class="dropdown-item">Profile</a>
+
+            ?>
+
+
+
+
+
             <div class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+              <a class="nav-link" href="<?php echo base_url('shopping/cart'); ?>"> 
+              <i class="fas fa-shopping-cart"></i>        
+            </a>
             </div>
           </div>
         </div>
@@ -137,8 +168,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </div>
         <!--Body-->
 
-        <form action="<?php echo base_url() . 'user/login/'; ?>" method="post">
+        <form action="#" method="post">
+          <!-- <?php echo base_url() . 'user/login/'; ?> -->
           <div class="modal-body mx-4">
+
+            <div class='text-danger text-center mb-4' id="loginError"></div>
             <!--Body-->
 
             <div class="mb-3">
@@ -153,7 +187,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <div class="font-small blue-text d-flex justify-content-between flex-row flex-wrap">
               <label for="checkbox" class="form-check-label">
-                <input type="checkbox" name="login_checkbox">
+                <input type="checkbox" name="loginCheckbox" id="loginCheckbox" value="checked">
                 Remember me?
               </label>
 
@@ -161,7 +195,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   Password?</a></p>
             </div>
             <div class="text-center mb-3">
-              <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Login</button>
+              <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a" id="submitLogin">Login</button>
             </div>
             <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Login
               with:</p>
@@ -192,13 +226,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
           </button>
         </div>
         <!--Body-->
-        <form method="post" action="<?php echo base_url() . 'user/register/'; ?>" id="registration">
+        <form method="post" action="#" id="registration">
 
+          <!-- <?php echo base_url() . 'user/register/'; ?> -->
           <div class="modal-body mx-4">
 
-            <div class="alert-danger d-none">
-
-              <p class="p-2 text-center">Oops! there's and error!</p>
+            <div class='text-danger text-center mb-4' id="error">
 
             </div>
             <!--Body-->
@@ -206,9 +239,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
               <label data-error="wrong" data-success="right" for="Form-email1">Email&nbsp;/&nbsp;Mobile No.</label>
               <input type="text" id="regInput" name="regInput" class="form-control" required minlength="10">
-              <ul class="input-requirement">
+              <!-- <ul class="input-requirement">
                 <li>Please Enter A Valid Email Address</li>
-              </ul>
+              </ul> -->
             </div>
 
             <div class="pb-3">
@@ -238,7 +271,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
 
             <div class="text-center my-3">
-              <button type="submit" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Register</button>
+              <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a" id="submitRegister">Register</button>
             </div>
             <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Register
               with:</p>
@@ -264,3 +297,86 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </div>
   </div>
   <!-- Modal -->
+
+
+  <script>
+    let registerButton = document.querySelector('#submitRegister');
+
+    $(registerButton).click(function() {
+
+      displayRegisterErrors();
+
+    });
+
+    function displayRegisterErrors() {
+
+      let regInput = document.getElementById('regInput').value;
+      let regPass = document.getElementById('regPass').value;
+      let regPass2 = document.getElementById('regPass2').value;
+      let regGender = document.querySelector('input[type ="radio"]').value;
+
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo base_url(); ?>user/register',
+        dataType: "JSON",
+        data: {
+          regInput: regInput,
+          regPass: regPass,
+          regPass2: regPass2,
+          gender: regGender
+        },
+
+        success: function(data) {
+          JSON.stringify(data);
+          if (data.error != undefined) {
+            $('#error').html(data.error);
+          } else {
+            window.location.href = data.url;
+          }
+
+          // $('#numRows').html(data.row);
+          // $('#ajaxData').html(data.products);
+        },
+        error: function(jqXhr, textStatus, errorMessage) {
+          console.log("Error: ", errorMessage);
+        }
+      });
+    }
+
+    let loginButton = document.querySelector('#submitLogin');
+    $(loginButton).click(function() {
+
+      displayLoginErrors();
+
+    });
+
+
+    function displayLoginErrors() {
+      let loginInput = document.getElementById('loginInput').value;
+      let loginPassword = document.getElementById('loginPassword').value;
+      let checkBox = document.querySelector('input[type ="checkbox"]').checked;
+
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo base_url(); ?>user/login',
+        dataType: "JSON",
+        data: {
+          loginInput: loginInput,
+          loginPassword: loginPassword,
+          checkBox: checkBox
+        },
+
+        success: function(data) {
+          JSON.stringify(data);
+          if (data.error != undefined) {
+            $('#loginError').html(data.error);
+          } else {
+            window.location.href = data.url;
+          }
+        },
+        error: function(jqXhr, textStatus, errorMessage) {
+          console.log("Error: ", errorMessage);
+        }
+      });
+    }
+  </script>

@@ -1,3 +1,10 @@
+<?php date_default_timezone_set('Asia/Kolkata');// change according timezone
+              $currentTime = date( 'Y-m-d', time() );
+
+              // echo $currentTime;
+              ?>
+
+
 <section class="mt-8">
       <div class="container">
         <!-- Breadcrumbs -->
@@ -14,6 +21,54 @@
         </div>
     </div>
 </section>
+
+<section class="py-5">
+    <div class="container">
+    <header class="mb-5">
+          <h2 class="text-uppercase h5 text-center">Contact form</h2>
+        </header>
+        <div class="row">
+          <div class="col-md-7 mb-5 mb-md-0 mx-auto">
+            <?php if($this->session->flashdata('item')){
+             $message =  $this->session->flashdata('item');
+             }
+              ?>
+              <div class="<?php if(!empty($message)) echo $message['class']; ?>"><?php if(!empty($message)) echo $message['message']; ?></div>
+            <form id="contact-form" method="post" action="<?php echo base_url('contact/'); ?>" class="form">
+              
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="name" class="form-label">Your firstname <span class="important-field">*</span></label>
+                      <input type="text" name="cnt_fname" id="name" placeholder="Enter your firstname" required="required" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="surname" class="form-label">Your lastname <span class="important-field">*</span></label>
+                      <input type="text" name="cnt_lname" id="surname" placeholder="Enter your  lastname" required="required" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Your email <span class="important-field">*</span></label>
+                  <input type="email" name="cnt_email" id="email" placeholder="Enter your  email" required="required" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="message" class="form-label">Your message for us <span class="important-field">*</span></label>
+                  <textarea rows="4" name="cnt_message" id="message" placeholder="Enter your message" required="required" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-dark">Send message</button> 
+            <div class="mt-3">
+                <p class="text-muted">Field marked with<span class="important-field">&nbsp;*&nbsp;</span>are important.
+            </div>          
+            </form>
+          </div>
+    </div>
+</section>
+
+
+
 <section class="bg-light p-5">
 		<div class="container">
 			<div class="row">
@@ -49,45 +104,6 @@
 				</div>
 			</div>
 		</div>
-</section>
-<section class="py-5">
-    <div class="container">
-    <header class="mb-5">
-          <h2 class="text-uppercase h5 text-center">Contact form</h2>
-        </header>
-        <div class="row">
-          <div class="col-md-7 mb-5 mb-md-0 mx-auto">
-            <form id="contact-form" method="post" action="#" class="form">
-              
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label for="name" class="form-label">Your firstname <span class="important-field">*</span></label>
-                      <input type="text" name="name" id="name" placeholder="Enter your firstname" required="required" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label for="surname" class="form-label">Your lastname <span class="important-field">*</span></label>
-                      <input type="text" name="surname" id="surname" placeholder="Enter your  lastname" required="required" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="email" class="form-label">Your email <span class="important-field">*</span></label>
-                  <input type="email" name="email" id="email" placeholder="Enter your  email" required="required" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="message" class="form-label">Your message for us <span class="important-field">*</span></label>
-                  <textarea rows="4" name="message" id="message" placeholder="Enter your message" required="required" class="form-control"></textarea>
-                </div>
-                <button type="submit" class="btn btn-outline-dark">Send message</button> 
-            <div class="mt-3">
-                <p class="text-muted">Field marked with<span class="important-field">&nbsp;*&nbsp;</span>are important.
-            </div>          
-            </form>
-          </div>
-    </div>
 </section>
 <section>
 <!-- <div id="map"></div>

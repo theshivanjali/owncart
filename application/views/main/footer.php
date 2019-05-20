@@ -11,7 +11,7 @@
 					</div>
 					<div class="services">
 						<h6 class="text-uppercase">Free Shipping and Return</h6>
-						<p class="text-muted">Free Shipping over $100</p>
+						<p class="text-muted">Free Shipping over <i class="fa fa-rupee-sign"></i>&nbsp;500</p>
 					</div>	
 				</div>
 				<div class="col-lg-4 service-column">
@@ -43,7 +43,7 @@
 			<div class="row">
 				<div class="col-lg-4 my-5">
 					<div class="font-weight-bold text-uppercase text-dark mb-3">
-						SELL.
+						OWNCART.
 					</div>
 					<p>The more you explore, the more you shop.</p>
 					<ul class="list-inline">
@@ -95,7 +95,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="text-white text-center">
-					<p class="mb-md-0" style="letter-spacing: 3px;">&copy; 2019 SHOP. All rights reserved.</p>
+					<p class="mb-md-0" style="letter-spacing: 3px;">&copy; 2019 OWNCART. All rights reserved.</p>
 				</div>
 			</div>
 		</div>

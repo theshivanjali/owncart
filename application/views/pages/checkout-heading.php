@@ -4,9 +4,9 @@
 // echo "</pre>";
 
 $sessionData = $this->session->userdata('uid');
-if(isset($sessionData)){
-    echo"yes";}
-    else {echo "no";}
+// if(isset($sessionData)){
+//     echo"yes";}
+//     else {echo "no";}
 
 ?>
 <section class="mt-8 mb-5">

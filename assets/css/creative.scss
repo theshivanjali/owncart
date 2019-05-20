@@ -1151,3 +1151,43 @@ a.btn.text-muted:hover {
     border-color: #9a6ee2;
     background-color: #9a6ee2;
 }
+
+
+
+.dropdown-menu{box-shadow: 2px 2px 2px rgba(0,0,0,0.1), -1px -1px 2px rgba(0,0,0,0.1);
+}
+
+.navbar .dropdown-menu {
+    margin-top: 1.1rem;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: left;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    text-transform: capitalize;
+}
+
+.icon-rounded {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+	color: #fff;
+}
+
+.bg-purple{
+	background-color: $purple-color;
+}

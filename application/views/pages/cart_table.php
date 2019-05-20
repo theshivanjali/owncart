@@ -1,5 +1,7 @@
 <?php $total = 0;  
 
+$data = $this->session->userdata();
+
 if(!empty($productDetail)){
 foreach($productDetail as $product)
 {
@@ -68,7 +70,7 @@ foreach($productDetail as $product)
                                                     <div class="d-flex align-items-center">
                                                         <!-- <div class="btn btn-items btn-items-decrease">-</div> -->
                                                         <input type="text" value="1" class="form-control text-center border-0 border-md input-items" id="quantity" disabled>
-                                                        <!-- <div class="btn btn-items btn-items-increase">+</div> -->
+                                                        <!-- <div class="btn btn-items btn-items-increase" id="updatePrice">+</div> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,18 +112,15 @@ foreach($productDetail as $product)
                     <i class="fas fa-arrow-left"></i> Continue Shopping</a>
                     <a 
                     <?php
-                    
-                    // if(isset($sessionData)){
+
+                    if(isset($data['userID'])){
                         echo "href = '".base_url('shopping/getAddress')."'";
-                    // }else {
-                    //     echo ' data-toggle="modal" href="#logModal" ';
-                    // }
+                    }else {
+                        echo ' data-toggle="modal" href="#logModal" ';
+                    }
                     
                     ?>
-                    
-                   
-                    
-                    
+                                
                     class="btn btn-outline-dark" id="proceedToCheckOut">Proceed to checkout
                     <i class="fas fa-arrow-right"></i>
                     </a>
